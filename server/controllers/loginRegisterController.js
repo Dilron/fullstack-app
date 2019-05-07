@@ -3,7 +3,12 @@ const bcrypt = require('bcryptjs')
 module.exports = {
     register: async (req, res) => {
         const db = req.app.get('db')
-        const {email, firstname, lastname, username, password, profileRef} = req.body
+        const {registerEmail : email, 
+            registerFirstname :firstname,
+            registerLastname : lastname,
+            registerUsername : username,
+            registerPassword : password,
+            registerProfileRef : profileRef} = req.body
         const {session} = req
         let emailTaken = await db.checkEmail({email})
         emailTaken = +emailTaken[0].count
@@ -29,7 +34,7 @@ module.exports = {
             username,
             userId: user[0].user_id
         }
-        res.sendStatus(200)
+        res.status(200).send({userId: user[0].user_id})
     },
     login: async (req, res) => {
         const db = req.app.get('db')
@@ -40,7 +45,11 @@ module.exports = {
             session.user = user[0]
             let authenticated  = bcrypt.compareSync(req.body.loginPassword, user[0].password)
             if(authenticated){
-                return res.status(200).send({authenticated, userId: user[0].login_id})
+                return res.status(200).send({authenticated,
+                    userId: user[0].login_id,
+                    firstname: user[0].firstname,
+                    lastname: user[0].lastname,
+                    profileRef: user[0].profile_ref})
             } else {
                 throw new Error(401)
             }

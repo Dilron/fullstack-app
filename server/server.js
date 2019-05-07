@@ -28,3 +28,5 @@ massive(CONNECTION_STRING).then(instance => {
 app.post('/auth/register', logCtrl.register)
 
 app.post('/auth/login', logCtrl.login)
+
+app.get('/auth/logout', logCtrl.logout)

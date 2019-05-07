@@ -1,11 +1,19 @@
 import React from 'react';
-import NavHeader from './components/NavHeader/NavHeader'
+import NavHeader from './components/NavHeader/NavHeader';
+import router from './router';
+import {HashRouter as Router} from 'react-router-dom';
+import {Provider} from 'react-redux';
+import store from './redDucks/store';
 
 function App() {
   return (
-    <div className="App">
+  <Provider store={store}>
+    <Router>
       <NavHeader/>
-    </div>
+      {router}
+    </Router>
+  </Provider>
+    
   );
 }
 
