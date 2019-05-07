@@ -30,7 +30,7 @@ class NavHeader extends Component {
         }
     }
 
-    handleFormUpdate = async (e) => {
+    handleFormUpdate = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
