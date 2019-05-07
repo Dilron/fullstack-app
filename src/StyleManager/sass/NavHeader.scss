@@ -1,9 +1,7 @@
 @import 'reset';
 
-
 .nav-header-container {
     position: fixed;
-    
 }
 
 .header-container {
@@ -23,7 +21,7 @@
 
 .nav-container {
     background: blue;
-    width: 18vw;
+    width: 22vw;
     height: 85vh;
     display: flex;
     flex-direction: column;
@@ -37,7 +35,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 70%;
 }
 
 form {
@@ -69,16 +67,22 @@ form {
 }
 
 @media (max-width: 415px){
+    .header-container{
+        width: 100vw;
+    }
     .nav-burger {
         visibility: visible;
     }
     #nav-container {
-        width: 100%;
+        width: 100vw;
+        max-width: 100%;
         padding: 3vh 0;
         transform: translateX(-100%);
     }
     #nav-container-mobile{
-        width: 100%;
+        width: 100vw;
+        max-width: 100%;
         padding: 3vh 0;
+        transform: translateX(0);
     }
 }

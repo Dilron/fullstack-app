@@ -160,7 +160,7 @@ class NavHeader extends Component {
                     {this.props.nav.showProfileStub && (
                         <div className='nav-stub'>
                             {this.props.user.profileRef && (
-                                <img src={this.props.user.profileRef} className='profile-stub-img' />
+                                <img src={this.props.user.profileRef} className='profile-stub-img' alt='profile' />
                             )}
                             <h1>
                                 Username: {this.props.user.username} 

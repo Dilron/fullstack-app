@@ -1,0 +1,11 @@
+#top-level-container {
+    transform: translate(22vw, 15vh);
+    position: relative;
+    z-index: -1;
+}
+
+@media (max-width: 415px){
+    #top-level-container{
+        transform: translate(0, 15vh);
+    }
+}
