@@ -15,6 +15,15 @@ create table post(
     zip int
 )
 
+create table shipping(
+    shipping_id serial primary key,
+    user_id int,
+    street text,
+    city varchar(100),
+    state varchar(2),
+    zip int
+)
+
 create table user_login(
     user_id serial primary key,
     username varchar(30) not null,

@@ -2,24 +2,30 @@ insert into post(
     user_id, 
     title, 
     message, 
-    img_ref, 
+    img_ref,
+    link_ref, 
     request, 
-    bid_accepted, 
-    link_ref
-    address, 
-    city, 
-    state, 
-    zip
-) values(
+    bid_accepted 
+)values(
     ${userId},
     ${newPostTitle},
     ${newPostMessage},
     ${newPostImg},
+    ${newReqLink},
     true,
-    false,
-    ${newReqLink}
-    ${newReqAddress},
+    false
+);
+
+insert into shipping(
+    user_id,
+    street,
+    city,
+    state,
+    zip
+)values(
+    ${userId},
+    ${newReqStreet},
     ${newReqCity},
     ${newReqState},
-    ${newReqZIP},
-)
+    ${newReqZIP}
+);

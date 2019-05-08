@@ -4,6 +4,7 @@ const app = express()
 const massive = require('massive')
 const session = require('express-session')
 const logCtrl = require('./controllers/loginRegisterController')
+const postsCtrl = require('./controllers/postsController')
 
 const {SESSION_SECRET, CONNECTION_STRING, SERVER_PORT} = process.env
 
@@ -30,3 +31,5 @@ app.post('/auth/register', logCtrl.register)
 app.post('/auth/login', logCtrl.login)
 
 app.get('/auth/logout', logCtrl.logout)
+
+app.post('/request/create-new', postsCtrl.createRequest)
