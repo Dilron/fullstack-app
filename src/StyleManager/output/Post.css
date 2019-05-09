@@ -46,10 +46,20 @@ table {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  height: 8em;
+  padding: 0.5em;
 }
 
-.post-info-container {
+.post-body-container {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 65%;
+}
+
+button {
+  width: 6em;
 }
 
 /*# sourceMappingURL=Post.css.map */

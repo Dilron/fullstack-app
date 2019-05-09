@@ -1,7 +1,7 @@
 
 
 const initialState = {
-    showLogin: true,
+    showLogin: false,
     showRegister: false,
     showProfileStub: false
 }

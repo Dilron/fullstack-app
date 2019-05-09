@@ -1,11 +1,12 @@
 #top-level-container {
-    max-width: 78vw;
+    width: 78vw;
     transform: translate(22vw, 15vh);
     position: relative;
 }
 
 @media (max-width: 415px){
     #top-level-container{
+        width: 100%;
         transform: translate(0, 15vh);
     }
 }

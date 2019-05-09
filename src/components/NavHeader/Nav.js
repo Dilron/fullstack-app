@@ -16,14 +16,35 @@ class Nav extends Component {
             registerEmail: '',
             registerFirstname: '',
             registerLastname: '',
-            registerProfileRef: ''
+            registerProfileRef: '',
+            loadingNav: true
         }
     }
 
     componentDidMount(){
-        axios.get('/auth/returning-user').then(
-
-        ).catch()
+        console.log('ping component did mount')
+        axios.get('/auth/returning-user').then(res => {
+            if(res.data){
+                console.log('ping if true')
+                this.props.updateUserName(res.data.username)
+                this.props.updateUserId(res.data.uesrId)
+                console.log('check action call object creator data: ', res.data)
+                const obj = {
+                    firstname: res.data.firstname,
+                    lastname: res.data.lastname,
+                    profileRef: res.data.profile_ref
+                }
+                console.log('check action call details object: ', obj)
+                this.props.updateUserDetails(obj)
+                this.props.showProfileStub()
+                this.setState({loadingNav: false})
+            }else{
+                console.log('ping if false')
+                this.props.showLogin()
+                this.setState({loadingNav: false})
+            }
+        }
+        ).catch(err => console.log('error checking return user: ', err))
     }
 
     handleFormUpdate = (e) => {
@@ -42,6 +63,7 @@ class Nav extends Component {
 
     handleLoginSubmit = async (e) => {
         e.preventDefault()
+        this.setState({loadingNav: true})
         const {loginUsername, loginPassword} = this.state
         try{
             const res = await axios.post('/auth/login', {loginUsername, loginPassword})
@@ -54,7 +76,9 @@ class Nav extends Component {
             }
             this.props.updateUserDetails(obj)
             this.props.showProfileStub()
+            this.setState({loadingNav: false})
         }catch(err){
+            this.setState({loadingNav: false})
             alert('Incorrect Login Info')
         }
     }
@@ -81,6 +105,9 @@ class Nav extends Component {
     render(){
         return(
                 <div id='nav-container' className='nav-container'>
+                    {this.state.loadingNav && (
+                        <div>Loading</div>
+                    ) }
                     {this.props.nav.showLogin && (
                             <form className='nav-form' onSubmit={this.handleLoginSubmit}>
                                 <h1>Login:</h1>
@@ -158,10 +185,10 @@ class Nav extends Component {
                                 <h1>Orders Dashboard</h1>
                             </Link>
                             <Link to='/'>
-                                <h1 onClick={() => this.handleLogout()}>Logout</h1> 
+                                <h1>Home</h1>
                             </Link>
                             <Link to='/'>
-                                <h1>Home</h1>
+                                <h1 onClick={() => this.handleLogout()}>Logout</h1> 
                             </Link>
                         </div>
                     )}

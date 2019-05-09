@@ -67,5 +67,17 @@ module.exports = {
         req.session.destroy()
         res.sendStatus(200)
     },
-    user
+    userCheck: async (req, res) => {
+        const db = req.app.get('db')
+        if(req.session.user){
+            const {username, userId} = req.session.user
+            console.log('log usercheck session username', username)
+            const getUser = await db.login({username}).catch(err => console.log('checkuser db error: ', err))
+            console.log('log db login result: ', getUser, req.session)
+            const {firstname, lastname, profile_ref} = getUser[0]
+            res.status(200).send({firstname, lastname, userId, username, profile_ref})
+        }else{
+            res.status(200).send(false)
+        }
+    }
 }

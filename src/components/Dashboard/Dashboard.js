@@ -28,8 +28,9 @@ class Dashboard extends Component {
         e.preventDefault()
         let newReq = {...this.state}
          axios.post('/request/create-new', newReq).then(res => {
-             return console.log('complete: ', res)
+            console.log('complete: ', res.status)
          }).catch(err => console.log('error in submit function: ', err))
+         return document.getElementById('dash-new-req-form').reset()
         }
     
 
@@ -37,7 +38,7 @@ class Dashboard extends Component {
         return(
             <div id='top-level-container' className='dashboard'>
                 <h1 >Dashboard</h1>
-                <form>
+                <form id='dash-new-req-form' onSubmit={this.handleNewReqSubmit}>
                     <h3>Create new post</h3>
                     <input name='newPostTitle'
                     type='text'

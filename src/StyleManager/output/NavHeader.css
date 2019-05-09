@@ -47,6 +47,7 @@ table {
   display: flex;
   align-items: center;
   position: fixed;
+  z-index: 5;
 }
 
 .nav-burger {
@@ -68,6 +69,7 @@ table {
   margin: 0;
   transform: translateY(15vh);
   transition: transform 0.15s ease-in-out;
+  z-index: 5;
 }
 
 .nav-form {
