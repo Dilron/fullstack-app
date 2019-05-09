@@ -40,16 +40,16 @@ table {
   border-spacing: 0;
 }
 
-#top-level-container {
-  max-width: 78vw;
-  transform: translate(22vw, 15vh);
-  position: relative;
+.post-container {
+  border: 1px solid black;
+  border-radius: 2%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-@media (max-width: 415px) {
-  #top-level-container {
-    transform: translate(0, 15vh);
-  }
+.post-info-container {
+  display: flex;
 }
 
-/*# sourceMappingURL=Dashboard.css.map */
+/*# sourceMappingURL=Post.css.map */

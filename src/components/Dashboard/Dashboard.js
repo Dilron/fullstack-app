@@ -26,7 +26,7 @@ class Dashboard extends Component {
 
     handleNewReqSubmit = (e) => {
         e.preventDefault()
-        let newReq = {...this.state, userId: this.props.userId}
+        let newReq = {...this.state}
          axios.post('/request/create-new', newReq).then(res => {
              return console.log('complete: ', res)
          }).catch(err => console.log('error in submit function: ', err))
@@ -35,7 +35,7 @@ class Dashboard extends Component {
 
     render(){
         return(
-            <div id='top-level-container'>
+            <div id='top-level-container' className='dashboard'>
                 <h1 >Dashboard</h1>
                 <form>
                     <h3>Create new post</h3>
@@ -53,7 +53,7 @@ class Dashboard extends Component {
                     onChange={this.handleFormUpdate} />
                     <input name='newReqLink'
                     type='text'
-                    placeholder='Link'
+                    placeholder='Link to the file to be printed'
                     onChange={this.handleFormUpdate} />
                     <input name='newReqStreet'
                     type='text'

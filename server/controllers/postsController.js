@@ -1,11 +1,21 @@
 
 
 module.exports = {
-    createRequest: async (req, res) => {
+    createRequest:(req, res) => {
         const db = req.app.get('db')
-        let reqBody = {...req.body}
-        console.log(reqBody)
-        const set = await db.createNewRequest({...req.body})
-        res.status(200).send(set)
+        console.log('log session: ', req.session)
+        const idVal = req.session.user.userId
+        let request = { userId: idVal, ...req.body}
+        console.log('log request: ', request)
+        db.createNewRequest(request).then(response => {
+            res.status(200).send(response)
+        }).catch(err => console.log('error in create request: ', err))
+    },
+    get5Posts: (req, res) => {
+        const db = req.app.get('db')
+        const offset = req.params.offset
+        db.read5Posts({offset}).then(response => [
+            res.status(200).send(response)
+        ]).catch(err => console.log('error getting 5 posts: ', err))
     }
 }

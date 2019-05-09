@@ -40,9 +40,15 @@ module.exports = {
         const db = req.app.get('db')
         const {loginUsername : username} = req.body
         const {session} = req
+        console.log('log session: ', session)
         try{
             let user = await db.login({username})
-            session.user = user[0]
+            console.log('log user: ', user)
+            session.user = {
+                username: user[0].username,
+                userId: user[0].user_id
+            }
+            console.log('log session after user call: ', session)
             let authenticated  = bcrypt.compareSync(req.body.loginPassword, user[0].password)
             if(authenticated){
                 return res.status(200).send({authenticated,
@@ -60,5 +66,6 @@ module.exports = {
     logout: (req, res) => {
         req.session.destroy()
         res.sendStatus(200)
-    }
+    },
+    user
 }

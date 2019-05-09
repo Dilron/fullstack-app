@@ -5,10 +5,12 @@ const massive = require('massive')
 const session = require('express-session')
 const logCtrl = require('./controllers/loginRegisterController')
 const postsCtrl = require('./controllers/postsController')
+const stripeCtrl = require('./controllers/stripeController')
 
 const {SESSION_SECRET, CONNECTION_STRING, SERVER_PORT} = process.env
 
 app.use(express.json())
+app.use(express.static(`${__dirname}/../build`))
 app.use(session({
     secret: SESSION_SECRET,
     resave: false,
@@ -33,3 +35,9 @@ app.post('/auth/login', logCtrl.login)
 app.get('/auth/logout', logCtrl.logout)
 
 app.post('/request/create-new', postsCtrl.createRequest)
+
+app.get('/post/read-5/:offset', postsCtrl.get5Posts)
+
+app.post('/request/charge', stripeCtrl.createCharge)
+
+app.get('/auth/returning-user', logCtrl.userCheck)

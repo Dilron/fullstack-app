@@ -41,9 +41,9 @@ table {
 }
 
 #top-level-container {
+  max-width: 78vw;
   transform: translate(22vw, 15vh);
   position: relative;
-  z-index: -1;
 }
 
 @media (max-width: 415px) {
