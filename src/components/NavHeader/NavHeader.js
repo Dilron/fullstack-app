@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import '../../StyleManager/output/NavHeader.css'
 import Nav from './Nav'
 
 class NavHeader extends Component {

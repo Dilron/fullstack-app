@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import '../../StyleManager/output/Home.css'
 import axios from 'axios'
 import Post from './Post'
 import {connect} from 'react-redux'

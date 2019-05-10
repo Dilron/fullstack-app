@@ -1,5 +1,16 @@
 select * from pg_catalog.pg_tables
 
+create table bid (
+    bid_id serial primary key,
+    post_id int,
+    bidder_id int,
+    poster_id int,
+    bid_message varchar(300),
+    bid_val int,
+    printer text,
+    est_processing_time int
+)
+
 create table post(
     post_id serial primary key,
     user_id int,

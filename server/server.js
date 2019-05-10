@@ -29,15 +29,13 @@ massive(CONNECTION_STRING).then(instance => {
 })
 
 app.post('/auth/register', logCtrl.register)
-
 app.post('/auth/login', logCtrl.login)
-
 app.get('/auth/logout', logCtrl.logout)
+app.get('/auth/returning-user', logCtrl.userCheck)
 
 app.post('/request/create-new', postsCtrl.createRequest)
+app.post('/request/new-bid', postsCtrl.createNewBid)
 
 app.get('/post/read-5/:offset', postsCtrl.get5Posts)
 
 app.post('/request/charge', stripeCtrl.createCharge)
-
-app.get('/auth/returning-user', logCtrl.userCheck)

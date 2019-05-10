@@ -17,5 +17,13 @@ module.exports = {
         db.read5Posts({offset}).then(response => [
             res.status(200).send(response)
         ]).catch(err => console.log('error getting 5 posts: ', err))
+    },
+    createNewBid: (req, res) => {
+        const db = req.app.get('db')
+        const bidderId = {bidderId: req.session.user.userId}
+        db.createNewBid({...req.body, ...bidderId}).then(response => {
+            console.log('log new bid response: ', response)
+            res.status(200).send('ok')
+        }).catch(err => console.log('error creating new bid: ', err))
     }
 }

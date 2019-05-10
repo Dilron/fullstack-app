@@ -1,3 +1,401 @@
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, a,
+img, ol, ul, li, form, footer,
+header, nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#top-level-container {
+  width: 78vw;
+  transform: translate(22vw, 15vh);
+  position: relative;
+}
+
+@media (max-width: 415px) {
+  #top-level-container {
+    width: 100%;
+    transform: translate(0, 15vh);
+  }
+}
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, a,
+img, ol, ul, li, form, footer,
+header, nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#top-level-container {
+  width: 78vw;
+  transform: translate(22vw, 15vh);
+  position: relative;
+}
+
+@media (max-width: 415px) {
+  #top-level-container {
+    width: 100%;
+    transform: translate(0, 15vh);
+  }
+}
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+}
+
+.posts-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+}
+
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, a,
+img, ol, ul, li, form, footer,
+header, nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.header-container {
+  background: red;
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 5;
+}
+
+.nav-burger {
+  height: 5vh;
+  width: auto;
+  visibility: hidden;
+  margin-left: 7em;
+}
+
+.nav-container {
+  position: fixed;
+  background: blue;
+  width: 22%;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3vh 2vw;
+  margin: 0;
+  transform: translateY(15vh);
+  transition: transform 0.15s ease-in-out;
+  z-index: 5;
+}
+.nav-container form h1 {
+  margin-bottom: 1vh;
+}
+.nav-container form input {
+  margin-bottom: 2vh;
+  width: 85%;
+}
+.nav-container form button {
+  margin-bottom: 2vh;
+  width: 65%;
+}
+
+.nav-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
+
+.nav-stub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-stub-img {
+  width: 80%;
+  height: auto;
+  border-radius: 50%;
+}
+
+@media (max-width: 415px) {
+  .header-container {
+    width: 100vw;
+  }
+
+  .nav-burger {
+    visibility: visible;
+  }
+
+  #nav-container {
+    width: 100vw;
+    max-width: 100%;
+    padding: 3vh 0;
+    transform: translate(-100%, 15vh);
+  }
+
+  #nav-container-mobile {
+    width: 100vw;
+    max-width: 100%;
+    padding: 3vh 0;
+    transform: translate(0, 15vh);
+  }
+}
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, a,
+img, ol, ul, li, form, footer,
+header, nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.post-container {
+  background: white;
+  border: 1px solid black;
+  border-radius: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 8em;
+  padding: 0.5em;
+}
+
+.post-body-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 65%;
+}
+
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, a,
+img, ol, ul, li, form, footer,
+header, nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#top-level-container {
+  width: 78vw;
+  transform: translate(22vw, 15vh);
+  position: relative;
+}
+
+@media (max-width: 415px) {
+  #top-level-container {
+    width: 100%;
+    transform: translate(0, 15vh);
+  }
+}
+.bid-overlay {
+  position: fixed;
+  background: rgba(19, 19, 19, 0.35);
+  width: 100%;
+  height: 110%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transform: translateY(-5vh);
+}
+
+.bid-bounding {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+  border: 1px solid black;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  margin-top: 5vh;
+}
+.bid-bounding form {
+  margin: 0;
+}
+.bid-bounding form input {
+  width: 98%;
+  margin: 0 0 0.75em 0;
+}
+
+.bid-button-lineup {
+  display: flex;
+}
 
 /*# sourceMappingURL=App.css.map */

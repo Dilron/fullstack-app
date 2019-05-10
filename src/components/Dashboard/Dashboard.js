@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import '../../StyleManager/output/Dashboard.css'
 import {connect} from 'react-redux'
 import CreateRequestForm from './CreateRequestForm';
 import CreateBidForm from './CreateBidForm';

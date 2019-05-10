@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import '../../StyleManager/output/Post.css'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {Redirect} from 'react-router'
@@ -9,7 +8,7 @@ class Post extends Component{
 
     handleMakeBid = () => {
         console.log(this.props)
-        if(this.props.userId){
+        if(this.props.userId && this.props.userId !== this.props.user_id){
             const {post_id, user_id, username, title, message, img_ref, request, bid_accepted, link_ref} = this.props
             this.props.pushToBid({post_id, user_id, username, title, message, img_ref, request, bid_accepted, link_ref})
             this.props.activateBid()

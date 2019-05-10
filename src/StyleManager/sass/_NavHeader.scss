@@ -30,6 +30,19 @@
     transform: translateY(15vh);
     transition: transform .15s ease-in-out;
     z-index: 5;
+    form {
+        h1{
+            margin-bottom: 1vh;
+        }
+        input{
+            margin-bottom: 2vh;
+            width: 85%;
+        }
+        button {
+            margin-bottom: 2vh;
+            width: 65%;
+        }
+    }
 }
 
 .nav-form {
@@ -39,19 +52,7 @@
     width: 90%;
 }
 
-form {
-    h1{
-        margin-bottom: 1vh;
-    }
-    input{
-        margin-bottom: 2vh;
-        width: 85%;
-    }
-    button {
-        margin-bottom: 2vh;
-        width: 65%;
-    }
-}
+
 
 .nav-stub{
     display: flex;

@@ -4,6 +4,7 @@ import router from './router';
 import {HashRouter as Router} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import store from './redDucks/store';
+import './StyleManager/output/App.css'
 
 function App() {
   return (

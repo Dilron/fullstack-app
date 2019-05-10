@@ -66,6 +66,7 @@ class Nav extends Component {
         try{
             const res = await axios.post('/auth/login', {loginUsername, loginPassword})
             this.props.updateUserName(loginUsername)
+            console.log(res.data)
             this.props.updateUserId(res.data.userId)
             const obj = {
                 firstname: res.data.firstname,

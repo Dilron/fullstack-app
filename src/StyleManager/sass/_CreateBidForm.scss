@@ -1,0 +1,36 @@
+
+
+.bid-overlay{
+    position: fixed;
+    background: rgba(19, 19, 19, 0.35);
+    width: 100%;
+    height: 110%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transform: translateY(-5vh)
+}
+
+.bid-bounding{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+    border: 1px solid black;
+    padding: .5em;
+    border-radius: .5em;
+    margin-top: 5vh;
+    form{
+        margin: 0;
+        input{
+            width: 98%;
+            margin: 0 0 .75em 0;
+
+        }
+    }
+}
+
+.bid-button-lineup{
+    display: flex;
+}

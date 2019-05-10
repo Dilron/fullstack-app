@@ -52,7 +52,7 @@ module.exports = {
             let authenticated  = bcrypt.compareSync(req.body.loginPassword, user[0].password)
             if(authenticated){
                 return res.status(200).send({authenticated,
-                    userId: user[0].login_id,
+                    userId: user[0].user_id,
                     firstname: user[0].firstname,
                     lastname: user[0].lastname,
                     profileRef: user[0].profile_ref})

@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import axios from 'axios'
+import {deactivateBid, pushToBid} from '../../redDucks/bidReducer'
 
 class CreateBidForm extends Component {
     constructor(props){
@@ -13,55 +14,76 @@ class CreateBidForm extends Component {
         }
     }
 
-    componentDidMount(){
-        //.get bid info from passed post_id + user_id
-    }
-
     handleFormUpdate = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
     }
 
-    handleNewBidSubmit = (e) => {
+    handelCancelBid = () => {
+        this.props.pushToBid({})
+        this.props.deactivateBid()
+    }
+
+    handleNewBidSubmit = async (e) => {
         e.preventDefault()
-        //.post bid info to database
+        if(this.state.newBidMessage !== '' &&
+            this.state.newBidVal !== 0 &&
+            this.state.newBidPrinter !== '' &&
+            this.state.newBidDaysEst !== 0){
+                const {user_id, post_id} = this.props.bid
+                const bidBody = {...this.state, user_id, post_id}
+                const res = await axios.post('/request/new-bid', bidBody)
+                if(res.data = 'ok'){
+                    alert('Successfully submited, the user will be notified of your bid')
+                    this.props.pushToBid({})
+                    this.props.deactivateBid()
+                }else{
+                    alert('error submitting bid')
+                }
+            } else {
+                alert('You must fill in all fields to submit a bid')
+            }
     }
 
     render(){
         return(
             <div className='bid-overlay'>
-                <div className='post-container'>
-                    <h1>Image standin: <br/> {this.props.img_ref} </h1>
-                    <div className='post-body-container'>
-                        <div className='post-info-container'>
-                            <h1>{this.props.title}, from {this.props.username}</h1>
-                            <h3>{this.props.link_ref}</h3>
-                            <h3>{this.props.message}</h3>
+                <div className='bid-bounding'>
+                    <div className='post-container'>
+                        <h1>Image standin: <br/> {this.props.bid.img_ref} </h1>
+                        <div className='post-body-container'>
+                            <div className='post-info-container'>
+                                <h1>{this.props.bid.title}, from {this.props.bid.username}</h1>
+                                <h3>{this.props.bid.link_ref}</h3>
+                                <h3>{this.props.bid.message}</h3>
+                            </div>
                         </div>
-                        {!this.props.bid_accepted &&
-                        <button onClick={() => this.handleMakeBid()} >Make Bid</button>}
                     </div>
+                        <h1>Create New Bid:</h1>
+                        <form onSubmit={this.handleNewBidSubmit}>
+                            <input name='newBidMessage'
+                            type='text'
+                            placeholder={`Add a message for ${this.props.bid.username}`}
+                            onChange={this.handleFormUpdate} />
+                            <input name='newBidVal'
+                            type='number'
+                            placeholder='Bid in USD'
+                            onChange={this.handleFormUpdate} />
+                            <input name='newBidPrinter'
+                            type='text'
+                            placeholder='Model of printer to be used'
+                            onChange={this.handleFormUpdate} />
+                            <input name='newBidDaysEst'
+                            type='number'
+                            placeholder='Estimated business days to produce and ship'
+                            onChange={this.handleFormUpdate} />
+                            <div className='bid-button-lineup'>
+                                <button>Submit</button>
+                                <button onClick={this.handelCancelBid}>Cancel</button>
+                            </div>
+                        </form>
                 </div>
-                <h1>Create New Bid:</h1>
-                <form>
-                    <input name='newBidMessage'
-                    type='text'
-                    placeholder={`Leave a message for target.user`}
-                    onChange={this.handleFormUpdate} />
-                    <input name='newBidVal'
-                    type='number'
-                    placeholder='Bid in USD'
-                    onChange={this.handleFormUpdate} />
-                    <input name='newBidPrinter'
-                    type='text'
-                    placeholder='Printer to be used'
-                    onChange={this.handleFormUpdate} />
-                    <input name='newBidDaysEst'
-                    type='number'
-                    placeholder='Estimated days until ready to ship'
-                    onChange={this.handleFormUpdate} />
-                </form>
             </div>
         )
     }
@@ -69,8 +91,13 @@ class CreateBidForm extends Component {
 
 const mapStateToProps = (reduxState) =>{
     return {
-        bid: reduxState.bid
+        bid: reduxState.bid.bidTargetPost
     }
 }
 
-export default connect(mapStateToProps)(CreateBidForm) 
+const mapDispatchToProps = {
+    deactivateBid,
+    pushToBid
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateBidForm) 
