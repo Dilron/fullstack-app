@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import '../../StyleManager/output/Home.css'
 import axios from 'axios'
 import Post from './Post'
+import {connect} from 'react-redux'
+import CreateBidForm from '../Dashboard/CreateBidForm';
 
 class Home extends Component{
     constructor(props){
@@ -22,6 +24,7 @@ class Home extends Component{
     render(){
         return(
             <div id='top-level-container' className='home-container'>
+                {this.props.activeBid && <CreateBidForm /> }
                 <h1 >Home</h1>
                 <div className='posts-display'>
                 {this.state.postsLoading && <h1>Loading</h1>}
@@ -35,4 +38,10 @@ class Home extends Component{
     }
 } 
 
-export default Home
+const mapStateToProps = (reduxState) => {
+    return {
+        activeBid: reduxState.bid.activeBid
+    }
+}
+
+export default connect(mapStateToProps)(Home) 

@@ -30,9 +30,20 @@ class CreateBidForm extends Component {
 
     render(){
         return(
-            <div>
+            <div className='bid-overlay'>
+                <div className='post-container'>
+                    <h1>Image standin: <br/> {this.props.img_ref} </h1>
+                    <div className='post-body-container'>
+                        <div className='post-info-container'>
+                            <h1>{this.props.title}, from {this.props.username}</h1>
+                            <h3>{this.props.link_ref}</h3>
+                            <h3>{this.props.message}</h3>
+                        </div>
+                        {!this.props.bid_accepted &&
+                        <button onClick={() => this.handleMakeBid()} >Make Bid</button>}
+                    </div>
+                </div>
                 <h1>Create New Bid:</h1>
-                {/* <Re-Render Post Here/> */}
                 <form>
                     <input name='newBidMessage'
                     type='text'

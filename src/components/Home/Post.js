@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import '../../StyleManager/output/Post.css'
 import {connect} from 'react-redux'
+import {withRouter} from 'react-router-dom'
+import {Redirect} from 'react-router'
 import {activateBid, pushToBid} from '../../redDucks/bidReducer'
 
 class Post extends Component{
@@ -41,8 +43,8 @@ const mapDispatchToProps ={
 
 const mapStateToProps = (reduxState) => {
     return{
-        userId: reduxState.user
+        userId: reduxState.user.userId
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Post) 
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Post)) 
