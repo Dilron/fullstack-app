@@ -21,14 +21,13 @@ class Nav extends Component {
         }
     }
 
-    componentDidMount(){
+    async componentDidMount() {
         console.log('ping component did mount')
-        axios.get('/auth/returning-user').then(res => {
+        const res = await axios.get('/auth/returning-user').catch(err => console.log('error checking return user: ', err))
             if(res.data){
                 console.log('ping if true')
-                this.props.updateUserName(res.data.username)
-                this.props.updateUserId(res.data.uesrId)
                 console.log('check action call object creator data: ', res.data)
+                this.props.updateUserName(res.data.username)
                 const obj = {
                     firstname: res.data.firstname,
                     lastname: res.data.lastname,
@@ -36,6 +35,7 @@ class Nav extends Component {
                 }
                 console.log('check action call details object: ', obj)
                 this.props.updateUserDetails(obj)
+                this.props.updateUserId(res.data.userId)
                 this.props.showProfileStub()
                 this.setState({loadingNav: false})
             }else{
@@ -43,8 +43,6 @@ class Nav extends Component {
                 this.props.showLogin()
                 this.setState({loadingNav: false})
             }
-        }
-        ).catch(err => console.log('error checking return user: ', err))
     }
 
     handleFormUpdate = (e) => {
@@ -178,14 +176,14 @@ class Nav extends Component {
                             <h1>
                                 Username: {this.props.user.username} 
                             </h1>
+                            <Link to='/'>
+                                <h1>Home</h1>
+                            </Link>
                             <Link to='/profile'>
                                 <h1>Profile</h1>
                             </Link>
                             <Link to='/dashboard'>
                                 <h1>Orders Dashboard</h1>
-                            </Link>
-                            <Link to='/'>
-                                <h1>Home</h1>
                             </Link>
                             <Link to='/'>
                                 <h1 onClick={() => this.handleLogout()}>Logout</h1> 
