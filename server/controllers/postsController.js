@@ -25,5 +25,20 @@ module.exports = {
             console.log('log new bid response: ', response)
             res.status(200).send('ok')
         }).catch(err => console.log('error creating new bid: ', err))
+    },
+    getRequests: (req, res) => {
+        const db = req.app.get('db')
+        const id = req.params.id
+        console.log('server log getReq userId ', id)
+        db.readReqsById({id}).then(response => {
+            res.status(200).send(response)
+        }).catch(err => console.log('error getting reqs: ', err))
+    },
+    getBids: (req, res) => {
+        const db = req.app.get('db')
+        const {id} = req.params
+        db.readBidsById({id}).then(response => {
+            res.status(200).send(response)
+        }).catch(err => console.log('error getting bids ', err))
     }
 }

@@ -33,7 +33,7 @@ class CreateRequestForm extends Component {
 
         render(){
             return(
-                <form id='dash-new-req-form' onSubmit={this.handleNewReqSubmit}>
+                <form id='dash-new-req-form' className='dash-new-req-form' onSubmit={this.handleNewReqSubmit}>
                     <h3>Create new post</h3>
                     <input name='newPostTitle'
                     type='text'

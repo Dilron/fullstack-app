@@ -37,5 +37,7 @@ app.post('/request/create-new', postsCtrl.createRequest)
 app.post('/request/new-bid', postsCtrl.createNewBid)
 
 app.get('/post/read-5/:offset', postsCtrl.get5Posts)
+app.get('/post/read/user-reqs/:id', postsCtrl.getRequests)
+app.get('/post/read/recieved-bids/:id', postsCtrl.getBids)
 
 app.post('/request/charge', stripeCtrl.createCharge)
