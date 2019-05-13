@@ -40,5 +40,12 @@ module.exports = {
         db.readBidsById({id}).then(response => {
             res.status(200).send(response)
         }).catch(err => console.log('error getting bids ', err))
+    },
+    getShipping: (req, res) => {
+        const db = req.app.get('db')
+        const {id} = req.params
+        db.readShippingById({id}).then(response => {
+            res.status(200).send(response)
+        }).catch(err => console.log('error in get shipping: ', err))
     }
 }

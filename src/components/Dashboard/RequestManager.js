@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import {connect} from 'react-redux'
+import {pushToReview} from '../../redDucks/bidReducer'
 
 class RequestManager extends Component {
     constructor(props){
@@ -23,6 +24,19 @@ class RequestManager extends Component {
         const bids = await axios.get(`/post/read/recieved-bids/${postId}`)
         console.log(bids.data)
         this.setState({bidsDisplay: bids.data})
+    }
+
+    handleToReview = async (bidObj) => {
+        let shipReq = await axios.get(`/post/read/shipping/${bidObj.post_id}`).catch(err => console.log('error in handle review: ', err))
+        let {city, state, street, zip} = shipReq.data[0]
+        console.log('log shipReq in handlereview: ', city, state, street, zip)
+        let pIndex = this.state.requestsDisplay.findIndex((ele) => {
+            return ele.post_id === bidObj.post_id
+        })
+        let {img_ref, title, link_ref} = this.state.requestsDisplay[pIndex]
+        let {username, bid_message, bid_val, printer, est_processing_time} = bidObj
+        const revObj = {city, state, street, zip, img_ref, title, link_ref, username, bid_message, bid_val, printer, est_processing_time}
+        this.props.pushToReview(revObj)
     }
 
     render(){
@@ -55,9 +69,9 @@ class RequestManager extends Component {
                                     <h1>{ele.bid_message}</h1>
                                 </div>
                                 <div>
-                                    <span>Cost: $ {ele.bid_val} Printer: {ele.printer} <br/> </span>
+                                    <span>Cost: $ {ele.bid_val}   Printer: {ele.printer} <br/> </span>
                                     <span>Estimated to print and ship in {ele.est_processing_time} days</span>
-                                    <button>Accept and Pay</button>
+                                    <button onClick={() => this.handleToReview(ele)} >Review and Pay</button>
                                 </div>
                             </div>
                         )
@@ -74,4 +88,8 @@ const mapStateToProps = (reduxState) => {
     }
 }
 
-export default connect(mapStateToProps)(RequestManager) 
+const mapDispatchToProps = {
+    pushToReview
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RequestManager) 

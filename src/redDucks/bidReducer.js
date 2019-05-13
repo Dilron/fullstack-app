@@ -2,12 +2,15 @@
 
 const initialState = {
     activeBid: false,
-    bidTargetPost: {}
+    bidTargetPost: {},
+    bidToReview: {}
 }
 
 const DEACTIVATE_BID = 'DEACTIVATE_BID'
 const ACTIVATE_BID = 'ACTIVATE_BID'
 const PUSH_TO_BID = 'PUSH_TO_BID'
+const PUSH_TO_REVIEW = 'PUSH_TO_REVIEW'
+const RESET_REVIEW = 'RESET_REVIEW'
 // const  = ''
 
 export function activateBid(){
@@ -31,6 +34,20 @@ export function pushToBid(postObj){
     }
 }
 
+export function pushToReview(reviewObj){
+    return {
+        type: PUSH_TO_REVIEW,
+        payload: reviewObj
+    }
+}
+
+export function resetReview(){
+    return {
+        type: RESET_REVIEW,
+        payload: {}
+    }
+}
+
 export default function reducer(state = initialState, action){
     const {type, payload} = action
     switch(type){
@@ -40,6 +57,10 @@ export default function reducer(state = initialState, action){
             return {...state, activeBid: payload}
         case PUSH_TO_BID:
             return {...state, bidTargetPost: {...payload}}
+        case PUSH_TO_REVIEW:
+            return {...state, bidToReview: {...payload}}
+        case RESET_REVIEW:
+            return {...state, bidToReview: {}}
         default:
             return state
     }
