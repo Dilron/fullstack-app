@@ -18,6 +18,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	font-family: 'Roboto Slab', serif;
 }
 ol, ul {
 	list-style: none;
@@ -33,4 +34,25 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+a:any-link{
+	color: black;
+	text-decoration: underline;
+}
+
+a:hover{
+	color: rgb(198, 198, 198);
+}
+
+input{
+	background: rgba(255, 255, 255, 0.81);
+	font: lighter 13px;
+	font-family: 'Roboto Slab', serif;
+}
+
+button{
+	font-size: 14px;
+	font-weight: bold;
+	font-family: 'Roboto Slab', serif;
 }

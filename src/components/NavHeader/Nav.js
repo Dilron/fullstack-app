@@ -171,24 +171,33 @@ class Nav extends Component {
                     )}
                     {this.props.nav.showProfileStub && (
                         <div className='nav-stub'>
-                            {this.props.user.profileRef && (
-                                <img src={this.props.user.profileRef} className='profile-stub-img' alt='profile' />
-                            )}
-                            <h1>
-                                Username: {this.props.user.username} 
-                            </h1>
-                            <Link to='/'>
-                                <h1>Home</h1>
-                            </Link>
-                            <Link to='/profile'>
-                                <h1>Profile</h1>
-                            </Link>
-                            <Link to='/dashboard'>
-                                <h1>Orders Dashboard</h1>
-                            </Link>
-                            <Link to='/'>
-                                <h1 onClick={() => this.handleLogout()}>Logout</h1> 
-                            </Link>
+                            <div className='profile-box-oct'>
+                                <div className='profile-box'>
+                                    <h1>Logged in as:</h1>
+                                    {this.props.user.profileRef && (
+                                        <img src={this.props.user.profileRef} className='profile-stub-img' alt='profile' />
+                                    )}
+                                    <h1>
+                                        {this.props.user.username} 
+                                    </h1>
+                                </div>
+                            </div>
+                            <div className='link-box-oct'>
+                                <div className='link-box'>
+                                    <Link to='/'>
+                                        <h1>Home</h1>
+                                    </Link>
+                                    <Link to='/profile'>
+                                        <h1>Profile</h1>
+                                    </Link>
+                                    <Link to='/dashboard'>
+                                        <h1>Orders Dashboard</h1>
+                                    </Link>
+                                    <Link to='/'>
+                                        <h1 onClick={() => this.handleLogout()}>Logout</h1> 
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     )}
                 </div>

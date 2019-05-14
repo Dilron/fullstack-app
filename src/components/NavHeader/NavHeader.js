@@ -23,9 +23,15 @@ class NavHeader extends Component {
                     onClick={() => this.mobileToggleNav()} 
                     src='https://i.imgur.com/Lnn7ows.png' 
                     alt='show menu button' />
-                    <h1>
-                        header
-                    </h1>
+                    <img className='pr-logo'
+                    src='https://i.imgur.com/dILYMwf.png'
+                     alt='print radicals logo' />
+                     <section>
+                        <h1>
+                            Print-radicals
+                        </h1>
+                        <h3>Crowd Sourced Printing</h3>
+                     </section>
                 </div>
                 <Nav/>
             </div>
