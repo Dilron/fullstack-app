@@ -7,6 +7,7 @@ const logCtrl = require('./controllers/loginRegisterController')
 const postsCtrl = require('./controllers/postsController')
 const stripeCtrl = require('./controllers/stripeController')
 const bsCtrl = require('./controllers/bullshitController')
+const ordersCtrl = require('./controllers/ordersController')
 
 const {SESSION_SECRET, CONNECTION_STRING, SERVER_PORT} = process.env
 
@@ -41,6 +42,9 @@ app.get('/post/read-5/:offset', postsCtrl.get5Posts)
 app.get('/post/read/user-reqs/:id', postsCtrl.getRequests)
 app.get('/post/read/recieved-bids/:id', postsCtrl.getBids)
 app.get('/post/read/shipping/:id', postsCtrl.getShipping)
+
+app.post('/order/new', ordersCtrl.createNewOrder)
+app.put('/order/request', ordersCtrl.updatePostBidStatus)
 
 app.post('/request/charge', stripeCtrl.createCharge)
 

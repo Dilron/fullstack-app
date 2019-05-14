@@ -15,9 +15,19 @@ class CheckoutForm extends Component {
     const {token} = await this.props.stripe.createToken({name: "Name"});
     console.log(token.id)
     const chargeBody = {id: token.id, cost: this.props.cost}
-    await axios.post('/charge', chargeBody).then(res => {
-        console.log('ping charge success')
-    }).catch(err => console.log('ping charge err: ', err))
+    const chargeOk = await axios.post('/charge', chargeBody).catch(err => console.log('ping charge err: ', err))
+    console.log('submit log props', this.props)
+    const {bidId} = this.props
+    console.log('submit log bidId', bidId)
+    if(chargeOk.status === 200){
+        axios.post('/order/new', {bidId}).then(res => {
+            console.log('order created ', res)
+        }).catch(err => console.log('error creating order: ', err))
+        axios.put('/order/request', {bidId}).then(res => {
+            console.log('post status updated', res)
+        }).catch(err => console.log('error updating post status: ', err))
+        this.props.resetReview()
+    }
   }
 
   handleInput = (e) => {

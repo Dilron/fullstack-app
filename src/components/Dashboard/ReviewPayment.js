@@ -11,7 +11,7 @@ class ReviewPayment extends Component {
     }
 
     render(){
-        const {city, state, street, zip, img_ref, title, link_ref, username, bid_message, bid_val, printer, est_processing_time} = this.props.reviewInfo
+        const {bid_id, city, state, street, zip, img_ref, title, link_ref, username, bid_message, bid_val, printer, est_processing_time} = this.props.reviewInfo
         return(
             <div className='review-payment-container'>
                 <div>{img_ref}</div>
@@ -34,7 +34,7 @@ class ReviewPayment extends Component {
                     <div className='checkout-bounding'>
                         <StripeProvider apiKey="pk_test_ypv91AWQYsLctkB7ZWRuHHfz008iIfansv">
                             <Elements>
-                                <CheckoutForm cost={bid_val} />
+                                <CheckoutForm cost={bid_val} bidId={bid_id} resetReview={this.props.resetReview} />
                             </Elements>
                         </StripeProvider> 
                     </div>

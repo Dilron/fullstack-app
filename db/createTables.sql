@@ -1,5 +1,15 @@
 select * from pg_catalog.pg_tables
 
+create table orders(
+    order_id serial primary key,
+    bid_id int,
+    message varchar(300),
+    order_img text,
+    processing boolean,
+    shipped boolean,
+    posted boolean
+)
+
 create table bid (
     bid_id serial primary key,
     post_id int,

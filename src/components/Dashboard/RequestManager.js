@@ -34,8 +34,8 @@ class RequestManager extends Component {
             return ele.post_id === bidObj.post_id
         })
         let {img_ref, title, link_ref} = this.state.requestsDisplay[pIndex]
-        let {username, bid_message, bid_val, printer, est_processing_time} = bidObj
-        const revObj = {city, state, street, zip, img_ref, title, link_ref, username, bid_message, bid_val, printer, est_processing_time}
+        let {bid_id, username, bid_message, bid_val, printer, est_processing_time} = bidObj
+        const revObj = {bid_id, city, state, street, zip, img_ref, title, link_ref, username, bid_message, bid_val, printer, est_processing_time}
         this.props.pushToReview(revObj)
     }
 
