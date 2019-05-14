@@ -20,7 +20,8 @@ class Post extends Component{
     render(){
         return(
             <div className='post-container'>
-                <h1>Image standin: <br/> {this.props.img_ref} </h1>
+                <img src={this.props.img_ref}
+                className='post-preview-image'  />
                 <div className='post-body-container'>
                     <div className='post-info-container'>
                         <h1>{this.props.title}, from {this.props.username}</h1>
