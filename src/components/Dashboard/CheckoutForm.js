@@ -37,8 +37,8 @@ class CheckoutForm extends Component {
   render() {
     return (
       <div className="checkout">
-        <h4>Amount: {this.props.cost} </h4>
-        <p>Would you like to complete the purchase?</p>
+        <h1>Amount: $<u>{this.props.cost}</u> </h1>
+        <h2>Would you like to complete the purchase?</h2>
         <CardElement />
         <button onClick={this.submit}>Send</button>
       </div>

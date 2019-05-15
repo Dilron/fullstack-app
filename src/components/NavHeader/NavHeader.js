@@ -25,7 +25,7 @@ class NavHeader extends Component {
                     alt='show menu button' />
                     <img className='pr-logo'
                     src='https://i.imgur.com/dILYMwf.png'
-                     alt='print radicals logo' />
+                    alt='print radicals logo' />
                      <section>
                         <h1>
                             Print-radicals

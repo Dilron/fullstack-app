@@ -9,10 +9,10 @@ class Dashboard extends Component {
     render(){
         return(
             <div id='top-level-container' className='dashboard'>
-                <h1 >Dashboard</h1>
+                <h1 id='top-level-title' >Dashboard</h1>
                 <CreateRequestForm />
-                <ReviewPayment />
                 <RequestManager />
+                <ReviewPayment />
             </div>
         )
     }

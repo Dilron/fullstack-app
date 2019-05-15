@@ -23,8 +23,8 @@ class Home extends Component{
     render(){
         return(
             <div id='top-level-container' className='home-container'>
+                <h1 id='top-level-title'>Home</h1>
                 {this.props.activeBid && <CreateBidForm /> }
-                <h1 >Home</h1>
                 <div className='posts-display'>
                 {this.state.postsLoading && <h1>Loading</h1>}
                 {!this.state.postsLoading && this.state.postsDisplay.map((ele, i) => {

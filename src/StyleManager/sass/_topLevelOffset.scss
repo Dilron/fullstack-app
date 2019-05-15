@@ -1,13 +1,27 @@
 #top-level-container {
     width: 78vw;
     height: 100%;
-    transform: translate(22vw, 12vh);
+    transform: translate(22vw, 14vh);
     position: relative;
+    background: rgb(220, 218, 218);
+    padding: 4em 1em 1em 1em;
+}
+
+#top-level-title{
+    position: fixed;
+    padding-top: .5em;
+    padding-left: 3.5em;
+    top: .5em;
+    left: .5em;
+    font-size: 120%;
+    width: 90%;
+    height: 2em;
+    background: linear-gradient(120deg, rgba(0,0,0,0) 0% 6%, #505050 7% 60%, rgba(0,0,0,0) 61% 100%)
 }
 
 @media (max-width: 415px){
     #top-level-container{
         width: 100%;
-        transform: translate(0, 12vh);
+        transform: translate(0, 14vh);
     }
 }

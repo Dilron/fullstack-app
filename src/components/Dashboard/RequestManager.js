@@ -46,15 +46,17 @@ class RequestManager extends Component {
                 <div className='req-manager-display'>
                     {this.state.requestsDisplay.map((ele, i) => {
                         return (
-                            <div className='post-container' key={i} >
-                                <h1>Image standin: <br/> {ele.img_ref} </h1>
-                                <div className='post-body-container'>
-                                    <div className='post-info-container'>
-                                        <h1>{ele.title}, from {ele.username}</h1>
-                                        <h3>{ele.link_ref}</h3>
-                                        <h3>{ele.message}</h3>
+                            <div className='post-container-oct' key={i}>
+                                <div className='post-container'  >
+                                    <img className='post-preview-image' src={ele.img_ref} />
+                                    <div className='post-body-container'>
+                                        <div className='post-info-container'>
+                                            <h1><u>{ele.title}</u></h1>
+                                            <h3><u>{ele.link_ref}</u></h3>
+                                            <h3><i>{ele.message}</i></h3>
+                                        </div>
+                                    <button onClick={() => this.handleShowBids(ele.post_id)}>Show Bids</button>
                                     </div>
-                                <button onClick={() => this.handleShowBids(ele.post_id)}>Show Bids</button>
                                 </div>
                             </div>
                         )
@@ -63,15 +65,17 @@ class RequestManager extends Component {
                 <div className='req-manager-bid-container'>
                     {this.state.bidsDisplay.map((ele, i) => {
                         return (
-                            <div className='req-manager-bid-display' key={i}>
-                                <div>
-                                    <h1>Bid from {ele.username} </h1>
-                                    <h1>{ele.bid_message}</h1>
-                                </div>
-                                <div>
-                                    <span>Cost: $ {ele.bid_val}   Printer: {ele.printer} <br/> </span>
-                                    <span>Estimated to print and ship in {ele.est_processing_time} days</span>
-                                    <button onClick={() => this.handleToReview(ele)} >Review and Pay</button>
+                            <div className='req-manager-bid-display-oct' key={i}>
+                                <div className='req-manager-bid-display' >
+                                    <div>
+                                        <h1>Bid from: <u>{ele.username}</u> </h1>
+                                        <h3><i>{ele.bid_message}</i></h3>
+                                    </div>
+                                    <div>
+                                        <h2>Cost: <u>${ele.bid_val}</u>,   Printer: <u>{ele.printer}</u> <br/> </h2>
+                                        <h2>Estimated to print and ship in <u>{ele.est_processing_time}</u> days</h2>
+                                        <button onClick={() => this.handleToReview(ele)} >Review and Pay</button>
+                                    </div>
                                 </div>
                             </div>
                         )
