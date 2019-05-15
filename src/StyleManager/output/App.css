@@ -141,7 +141,7 @@ button {
   color: #9f9f9f;
   background: black;
   width: 100%;
-  height: 15vh;
+  height: 12vh;
   display: flex;
   align-items: center;
   position: fixed;
@@ -167,13 +167,13 @@ button {
   position: fixed;
   background: #505050;
   width: 22%;
-  height: 85vh;
+  height: 88vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 3vh 2vw;
   margin: 0;
-  transform: translateY(15vh);
+  transform: translateY(12vh);
   transition: transform 0.15s ease-in-out;
   z-index: 5;
 }
@@ -257,7 +257,7 @@ button {
     width: 100vw;
     max-width: 100%;
     padding: 3vh 0;
-    transform: translate(-100%, 15vh);
+    transform: translate(-100%, 12vh);
     font-size: 200%;
   }
 
@@ -265,10 +265,19 @@ button {
     width: 100vw;
     max-width: 100%;
     padding: 3vh 1em;
-    transform: translate(0, 15vh);
+    transform: translate(0, 12vh);
     font-size: 200%;
   }
 }
+.post-container-oct {
+  background: #242424;
+  position: relative;
+  padding: 0.4em;
+  margin-bottom: 0.5em;
+  width: 100%;
+  clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
+}
+
 .post-container {
   position: relative;
   background: white;
@@ -279,7 +288,6 @@ button {
   height: 10em;
   padding: 0.5em;
   border: 0.5em solid white;
-  margin-bottom: 0.5em;
   clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
 }
 
@@ -308,6 +316,7 @@ button {
   justify-content: center;
   align-items: flex-start;
   transform: translateY(-5vh);
+  z-index: 4;
 }
 
 .bid-bounding {
@@ -336,14 +345,14 @@ button {
 #top-level-container {
   width: 78vw;
   height: 100%;
-  transform: translate(22vw, 15vh);
+  transform: translate(22vw, 12vh);
   position: relative;
 }
 
 @media (max-width: 415px) {
   #top-level-container {
     width: 100%;
-    transform: translate(0, 15vh);
+    transform: translate(0, 12vh);
   }
 }
 

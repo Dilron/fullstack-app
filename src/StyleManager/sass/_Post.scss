@@ -1,4 +1,11 @@
-
+.post-container-oct{
+    background: #242424;
+    position: relative;
+    padding: .4em;
+    margin-bottom: .5em;
+    width: 100%;
+    clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
+}
 
 .post-container {
     position: relative;
@@ -10,7 +17,6 @@
     height: 10em;
     padding: .5em;
     border: .5em solid white;
-    margin-bottom: .5em;
     clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);}
 
 .post-body-container{

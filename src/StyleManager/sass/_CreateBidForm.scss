@@ -8,7 +8,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    transform: translateY(-5vh)
+    transform: translateY(-5vh);
+    z-index: 4;
 }
 
 .bid-bounding{

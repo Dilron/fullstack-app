@@ -51,7 +51,8 @@ class CreateBidForm extends Component {
             <div className='bid-overlay'>
                 <div className='bid-bounding'>
                     <div className='post-container'>
-                        <h1>Image standin: <br/> {this.props.bid.img_ref} </h1>
+                        <img src={this.props.bid.img_ref}
+                        className='post-preview-image' />
                         <div className='post-body-container'>
                             <div className='post-info-container'>
                                 <h1>{this.props.bid.title}, from {this.props.bid.username}</h1>

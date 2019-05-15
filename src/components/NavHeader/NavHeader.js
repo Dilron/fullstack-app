@@ -30,7 +30,7 @@ class NavHeader extends Component {
                         <h1>
                             Print-radicals
                         </h1>
-                        <h3>Crowd Sourced Printing</h3>
+                        <h3>Crowd Sourced 3D Printing</h3>
                      </section>
                 </div>
                 <Nav/>
