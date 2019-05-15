@@ -128,22 +128,36 @@ button {
 
 .review-payment-container {
   display: flex;
-  justify-content: space-around;
-  height: 15em;
+  justify-content: space-between;
+  height: 20em;
   border: 0.5em solid white;
   background: white;
   padding: 0.5em;
   clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
 }
 
+.review-payment-image {
+  width: 33%;
+  max-height: 70%;
+  object-fit: cover;
+}
+
 .review-info-bounding {
+  width: 64%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .review-info-breakout {
+  height: 66%;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.review-info-breakout h1 {
+  margin-bottom: 0.75em;
 }
 .review-info-breakout h3 {
   font-size: 75%;
@@ -186,7 +200,7 @@ button {
   flex-direction: column;
   justify-content: space-between;
   border: 0.5em solid rgba(0, 0, 0, 0);
-  background: white;
+  background: #dcdada;
   clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
 }
 .req-manager-bid-display h3 {
@@ -197,6 +211,7 @@ button {
 }
 
 .checkout {
+  height: 33%;
   width: 70%;
 }
 .checkout h2 {
@@ -217,7 +232,7 @@ button {
 
 .header-container {
   color: #9f9f9f;
-  background-image: linear-gradient(120deg, black 0% 61%, rgba(0, 0, 0, 0.194) 75% 100%), url("https://i.imgur.com/GQdc7X7.png");
+  background-image: linear-gradient(120deg, black 0% 61%, rgba(0, 0, 0, 0.194) 80% 100%), url("https://i.imgur.com/GQdc7X7.png");
   background-position: right;
   background-repeat: no-repeat;
   background-size: 100%, 40%;
@@ -247,7 +262,7 @@ button {
 
 .nav-container {
   position: fixed;
-  background-image: linear-gradient(black 0% 1%, rgba(75, 75, 75, 0.701) 2% 100%), url("https://i.imgur.com/tCPbzfu.png");
+  background-image: linear-gradient(black 0% 1%, rgba(220, 218, 218, 0.475) 2% 100%), url("https://i.imgur.com/tCPbzfu.png");
   background-size: contain;
   background-position: top;
   background-attachment: fixed;
@@ -367,7 +382,7 @@ button {
 
 .post-container {
   position: relative;
-  background: white;
+  background: #dcdada;
   display: flex;
   justify-content: space-between;
   width: 100%;
