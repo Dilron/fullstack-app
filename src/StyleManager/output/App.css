@@ -232,7 +232,7 @@ button {
 
 .header-container {
   color: #9f9f9f;
-  background-image: linear-gradient(120deg, black 0% 61%, rgba(0, 0, 0, 0.194) 80% 100%), url("https://i.imgur.com/GQdc7X7.png");
+  background-image: linear-gradient(120deg, black 0% 59%, rgba(0, 0, 0, 0.194) 100%), url("https://i.imgur.com/GQdc7X7.png");
   background-position: right;
   background-repeat: no-repeat;
   background-size: 100%, 40%;
@@ -262,16 +262,17 @@ button {
 
 .nav-container {
   position: fixed;
-  background-image: linear-gradient(black 0% 1%, rgba(220, 218, 218, 0.475) 2% 100%), url("https://i.imgur.com/tCPbzfu.png");
+  background-image: linear-gradient(black 0% 1%, rgba(12, 12, 12, 0.783) 2% 100%), url("https://i.imgur.com/tCPbzfu.png");
   background-size: contain;
   background-position: top;
   background-attachment: fixed;
+  color: #9f9f9f;
   width: 22%;
   height: 87vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 8vh 2vw 2vh 2vw;
+  padding: 4vh 2vw 2vh 2vw;
   margin: 0;
   transform: translateY(13vh);
   transition: transform 0.15s ease-in-out;
@@ -287,6 +288,9 @@ button {
 .nav-container button {
   margin-bottom: 2vh;
   width: 65%;
+}
+.nav-container a {
+  color: #9f9f9f;
 }
 
 .nav-form {
@@ -312,7 +316,7 @@ button {
 }
 
 .profile-box-oct {
-  background: black;
+  background: #505050;
   padding: 0.3em;
 }
 
@@ -321,13 +325,12 @@ button {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background: #9f9f9f;
-  color: black;
+  background: black;
   clip-path: polygon(7% 0, 93% 0, 100% 11%, 100% 89%, 93% 100%, 7% 100%, 0 89%, 0 11%);
 }
 
 .link-box-oct {
-  background: black;
+  background: #505050;
   padding: 0.3em;
   width: 100%;
   margin-top: 1em;
@@ -335,7 +338,7 @@ button {
 
 .link-box {
   width: 100%;
-  background: #9f9f9f;
+  background: black;
   padding: 0.4em 0.1em;
   clip-path: polygon(7% 0, 93% 0, 100% 11%, 100% 89%, 93% 100%, 7% 100%, 0 89%, 0 11%);
 }

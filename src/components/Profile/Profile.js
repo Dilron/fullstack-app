@@ -9,7 +9,7 @@ class Profile extends Component {
     render(){
         return(
             <div id='top-level-container'>
-                <h1 >Profile</h1>
+                <h1 id='top-level-title'>Profile</h1>
             </div>
         )
     }

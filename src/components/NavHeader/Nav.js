@@ -191,7 +191,7 @@ class Nav extends Component {
                                         <h1>Profile</h1>
                                     </Link>
                                     <Link to='/dashboard'>
-                                        <h1>Orders Dashboard</h1>
+                                        <h1>Dashboard</h1>
                                     </Link>
                                     <Link to='/'>
                                         <h1 onClick={() => this.handleLogout()}>Logout</h1> 
