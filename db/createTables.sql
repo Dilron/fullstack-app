@@ -3,7 +3,10 @@ select * from pg_catalog.pg_tables
 create table orders(
     order_id serial primary key,
     bid_id int,
-    message varchar(300),
+    post_id int,
+    seller_id int,
+    client_id int,
+    order_message varchar(300),
     order_img text,
     processing boolean,
     shipped boolean,

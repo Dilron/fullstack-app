@@ -3,7 +3,9 @@
     height: 100%;
     transform: translate(22vw, 14vh);
     position: relative;
-    background: rgb(220, 218, 218);
+    background-image: linear-gradient(rgba(0,0,0,0) 0% 0%, rgb(220, 218, 218, .5) 0% 100%),
+    url('https://i.imgur.com/uiDXUgf.png');
+    background-size: cover;
     padding: 4em 1em 1em 1em;
 }
 
