@@ -45,6 +45,8 @@ app.get('/post/read/shipping/:id', postsCtrl.getShipping)
 
 app.post('/order/new', ordersCtrl.createNewOrder)
 app.put('/order/request', ordersCtrl.updatePostBidStatus)
+app.get('/order/user-associated', ordersCtrl.getUserOrders)
+app.put('/order/ship', ordersCtrl.updateShipOrder)
 
 app.post('/request/charge', stripeCtrl.createCharge)
 

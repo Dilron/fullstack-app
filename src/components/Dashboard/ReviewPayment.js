@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Elements, StripeProvider} from 'react-stripe-elements';
 import CheckoutForm from './CheckoutForm';
 import {resetReview} from '../../redDucks/bidReducer'
+import axios from 'axios'
 
 class ReviewPayment extends Component {
 
@@ -10,11 +11,22 @@ class ReviewPayment extends Component {
         this.props.resetReview()
     }
 
+    handleCreateOrder = () => {
+        const {bid_id : bidId, post_id : postId} = this.props.reviewInfo
+        axios.post('/order/new', {bidId, postId}).then(res => {
+            console.log('order created ', res)
+        }).catch(err => console.log('error creating order: ', err))
+    }
+
     render(){
         const {bid_id, city, state, street, zip, img_ref, title, username, bid_message, bid_val, printer, est_processing_time} = this.props.reviewInfo
+        console.log('log from review render ', bid_id)
         return(
             <div className='review-payment-container-oct'>
                 <div className='review-payment-container'>
+                {bid_id
+                ?
+                    (<>
                     <img src={img_ref} className='review-payment-image' />
                     <div className='review-info-bounding'>
                         <div className='review-info-breakout'>
@@ -32,11 +44,18 @@ class ReviewPayment extends Component {
                         <div className='checkout-bounding'>
                             <StripeProvider apiKey="pk_test_ypv91AWQYsLctkB7ZWRuHHfz008iIfansv">
                                 <Elements>
-                                    <CheckoutForm cost={bid_val} bidId={bid_id} resetReview={this.props.resetReview} />
+                                    <CheckoutForm cost={bid_val} 
+                                    bidId={bid_id} 
+                                    resetReview={this.props.resetReview}
+                                    handleCreateOrder={this.handleCreateOrder} />
                                 </Elements>
                             </StripeProvider> 
                         </div>
                     </div>
+                    </>)
+                :
+                (<div>Select a bid to review</div>)
+                }
                 </div>
             </div>
         )

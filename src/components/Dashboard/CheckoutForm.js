@@ -20,12 +20,11 @@ class CheckoutForm extends Component {
     const {bidId} = this.props
     console.log('submit log bidId', bidId)
     if(chargeOk.status === 200){
-        axios.post('/order/new', {bidId}).then(res => {
-            console.log('order created ', res)
-        }).catch(err => console.log('error creating order: ', err))
+      this.props.handleCreateOrder()
         axios.put('/order/request', {bidId}).then(res => {
             console.log('post status updated', res)
         }).catch(err => console.log('error updating post status: ', err))
+        alert('Order successfully paid for and created. View its status in the orders page.')
         this.props.resetReview()
     }
   }

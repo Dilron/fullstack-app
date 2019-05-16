@@ -1,9 +1,10 @@
 #top-level-container {
     width: 78vw;
     height: 100%;
+    min-height: 86vh;
     transform: translate(22vw, 14vh);
     position: relative;
-    background-image: linear-gradient(rgba(0,0,0,0) 0% 0%, rgb(220, 218, 218, .5) 0% 100%),
+    background-image: linear-gradient(rgba(0,0,0,0) 0% 0%, rgb(220, 218, 218, .6) 0% 100%),
     url('https://i.imgur.com/uiDXUgf.png');
     background-size: cover;
     padding: 4em 1em 1em 1em;
