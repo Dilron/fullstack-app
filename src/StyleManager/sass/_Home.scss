@@ -6,6 +6,23 @@
     align-items: center;
 }
 
+.carousel{
+    width: 70%;
+    height: 20em;
+}
+
+.carousel-slide{
+    height: 100%;
+    width: 70%;
+    margin: 0;
+    border: 0;
+}
+
+.carousel-image{
+    height: 100%;
+    width: auto;
+}
+
 .posts-display {
     width: 100%;
     display: flex;

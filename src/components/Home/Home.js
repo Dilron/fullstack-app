@@ -3,6 +3,7 @@ import axios from 'axios'
 import Post from './Post'
 import {connect} from 'react-redux'
 import CreateBidForm from '../Dashboard/CreateBidForm';
+import ProjectCarousel from './ProjectCarousel'
 
 class Home extends Component{
     constructor(props){
@@ -25,7 +26,12 @@ class Home extends Component{
             <div id='background'>
                 <div id='top-level-container' className='home-container'>
                     <h1 id='top-level-title'>Home</h1>
+                    <span>Recently Completed Projects</span>
+                    
+                        <ProjectCarousel className='carousel-container'/>
+                    
                     {this.props.activeBid && <CreateBidForm /> }
+                    <span>Recent Bids</span>
                     <div className='posts-display'>
                     {this.state.postsLoading && <h1>Loading</h1>}
                     {!this.state.postsLoading && this.state.postsDisplay.map((ele, i) => {

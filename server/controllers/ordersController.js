@@ -28,5 +28,11 @@ module.exports = {
         const db = req.app.get('db')
         const newVals = await db.updateShipOrder(req.body).catch(err => console.log('error update/ship order: ', err))
         res.status(200).send(newVals[0])
+    },
+    getThreeOrders: (req, res) => {
+        const db = req.app.get('db')
+        db.read3PublishedOrders().then(response => {
+            res.status(200).send(response)
+        }).catch(err => console.log('error in carousel get three: ', err))
     }
 }

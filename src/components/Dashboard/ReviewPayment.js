@@ -39,7 +39,7 @@ class ReviewPayment extends Component {
                                 <b><i>{street}</i></b>, <b><i>{city}</i></b><br/>
                                 <b><i>{state}</i></b>, <b><i>{zip}</i></b> </h2>
                         </div>
-                        <div className='checkout-bounding'>
+                        
                             <StripeProvider apiKey="pk_test_ypv91AWQYsLctkB7ZWRuHHfz008iIfansv">
                                 <Elements>
                                     <CheckoutForm cost={bid_val} 
@@ -48,7 +48,7 @@ class ReviewPayment extends Component {
                                     handleCreateOrder={this.handleCreateOrder} />
                                 </Elements>
                             </StripeProvider> 
-                        </div>
+                        
                     </div>
                     </>)
                 :
