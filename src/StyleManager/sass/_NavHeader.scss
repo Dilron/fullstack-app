@@ -2,12 +2,12 @@
 
 .header-container {
     color: #9f9f9f;
-    background-image:linear-gradient(120deg, black 0% 59%, rgba(0, 0, 0, 0.194)  100%),
-    url("https://i.imgur.com/GQdc7X7.png");
+    background-image:linear-gradient(120deg, black 0% 59%, rgba(0, 0, 0, 0) 79% 100%),
+    url("https://i.imgur.com/IOe8TWQ.png");
     background-position: right;
     background-repeat: no-repeat;
-    background-size: 100%, 40%;
-    filter: grayscale(80%);
+    background-size: 100%, contain;
+    filter: grayscale(45%);
     width: 100%;
     height: 14vh;
     display: flex;
@@ -64,6 +64,9 @@
         }
         a{
             color: #9f9f9f
+        }
+        a:hover{
+            color: red;
         }
 }
 
@@ -135,15 +138,17 @@
     #nav-container {
         width: 100vw;
         max-width: 100%;
-        padding: 3vh 0;
+        padding: 1vh 0;
         transform: translate(-100%, 12vh);
         font-size: 200%;
+        background: black;
     }
     #nav-container-mobile{
         width: 100vw;
         max-width: 100%;
-        padding: 3vh 1em;
+        padding: 1vh 1em;
         transform: translate(0, 12vh);
         font-size: 200%;
+        background: black;
     }
 }

@@ -7,6 +7,7 @@ header, nav {
   border: 0;
   font-size: 100%;
   font: inherit;
+  font-weight: lighter;
   vertical-align: baseline;
   box-sizing: border-box;
 }
@@ -41,15 +42,6 @@ table {
   border-spacing: 0;
 }
 
-a:any-link {
-  color: black;
-  text-decoration: underline;
-}
-
-a:hover {
-  color: #c6c6c6;
-}
-
 u {
   color: #a20000;
 }
@@ -64,11 +56,24 @@ button {
   font-size: 14px;
   font-weight: bold;
   font-family: "Roboto Slab", serif;
+  background: #505050;
+}
+
+span {
+  font-size: 120%;
+  width: 100%;
+  height: 1em;
+  padding-left: 3em;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+  background: linear-gradient(120deg, rgba(0, 0, 0, 0) 0% 3%, #a0a0a0 4% 65%, rgba(0, 0, 0, 0) 66% 100%);
 }
 
 #background {
   position: relative;
-  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.92) 0%, rgba(45, 45, 45, 0.591) 30% 100%), url("https://i.imgur.com/2mOK9Uq.png");
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.92) 0%, rgba(34, 34, 34, 0.667) 30% 100%), url("https://i.imgur.com/2mOK9Uq.png");
   background-position: center;
   background-size: cover;
   width: 100%;
@@ -93,17 +98,24 @@ button {
   font-size: 120%;
   width: 90%;
   height: 2em;
+  font-weight: bold;
+  font-style: italic;
   background: linear-gradient(120deg, rgba(0, 0, 0, 0) 0% 6%, #a0a0a0 7% 60%, rgba(0, 0, 0, 0) 61% 100%);
 }
 
 @media (max-width: 415px) {
   #top-level-container {
     width: 100%;
-    transform: translate(0, 14vh);
+    transform: translate(0, 0);
   }
 }
+.dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
 .dash-new-req-form-oct {
-  background: #242424;
+  background: #a0a0a0;
   position: relative;
   padding: 0.4em;
   margin-bottom: 1em;
@@ -116,7 +128,8 @@ button {
   height: 18em;
   display: flex;
   position: relative;
-  background: white;
+  background: black;
+  color: #9f9f9f;
   padding: 0.5em;
   border: 0.5em solid rgba(0, 0, 0, 0);
   clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
@@ -127,12 +140,12 @@ button {
   display: flex;
   flex-direction: column;
   position: relative;
-  background: white;
+  background: black;
   padding: 0.5em;
 }
 .dash-new-req-form input {
   width: 100%;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.75em;
 }
 .dash-new-req-form button {
   width: 30%;
@@ -153,55 +166,6 @@ button {
   width: 45%;
 }
 
-.review-payment-container-oct {
-  background: #242424;
-  position: relative;
-  padding: 0.4em;
-  margin-bottom: 0.5em;
-  width: 100%;
-  clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
-}
-
-.review-payment-container {
-  display: flex;
-  justify-content: space-between;
-  height: 20em;
-  border: 0.5em solid white;
-  background: white;
-  padding: 0.5em;
-  clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
-}
-
-.review-payment-image {
-  width: 33%;
-  max-height: 70%;
-  object-fit: cover;
-}
-
-.review-info-bounding {
-  width: 64%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.review-info-breakout {
-  height: 66%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.review-info-breakout h1 {
-  margin-bottom: 0.75em;
-}
-.review-info-breakout h3 {
-  font-size: 75%;
-}
-.review-info-breakout h2 {
-  font-size: 85%;
-}
-
 .req-manager-container {
   width: 100%;
   display: flex;
@@ -214,13 +178,16 @@ button {
   display: flex;
   flex-direction: column;
 }
+.req-manager-display .post-container-oct {
+  width: 100%;
+}
 
 .req-manager-bid-container {
   width: 49%;
 }
 
 .req-manager-bid-display-oct {
-  background: linear-gradient(165deg, #242424 0 52%, rgba(0, 0, 0, 0) 54% 100%);
+  background: linear-gradient(165deg, #a0a0a0 0 52%, rgba(0, 0, 0, 0) 54% 100%);
   position: relative;
   padding: 0.4em;
   margin-bottom: 0.5em;
@@ -236,7 +203,8 @@ button {
   flex-direction: column;
   justify-content: space-between;
   border: 0.5em solid rgba(0, 0, 0, 0);
-  background: #dcdada;
+  background: black;
+  color: #9f9f9f;
   clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
 }
 .req-manager-bid-display h3 {
@@ -246,12 +214,63 @@ button {
   font-size: 85%;
 }
 
+.review-payment-container-oct {
+  background: #a0a0a0;
+  position: relative;
+  padding: 0.4em;
+  margin-bottom: 0.5em;
+  width: 100%;
+  clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
+}
+
+.review-payment-container {
+  display: flex;
+  justify-content: space-between;
+  height: 20em;
+  border: 0.5em solid black;
+  background: black;
+  color: #9f9f9f;
+  padding: 0.5em;
+  clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
+}
+.review-payment-container h1 {
+  border-bottom: 1px solid #9f9f9f;
+  margin-bottom: 0.25em;
+}
+.review-payment-container h2 {
+  border: 1px solid #9f9f9f;
+  margin-bottom: 0.4em;
+  font-size: 75%;
+  height: 4.5em;
+}
+
+.review-payment-image {
+  width: 33%;
+  max-height: 70%;
+  object-fit: cover;
+}
+
+.review-info-bounding {
+  width: 64%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-info-breakout {
+  height: 66%;
+  display: flex;
+  flex-direction: column;
+}
+
 .checkout {
   height: 33%;
   width: 70%;
 }
 .checkout h2 {
   font-size: 85%;
+  border: none;
+  height: none;
 }
 
 .home-container {
@@ -269,11 +288,11 @@ button {
 
 .header-container {
   color: #9f9f9f;
-  background-image: linear-gradient(120deg, black 0% 59%, rgba(0, 0, 0, 0.194) 100%), url("https://i.imgur.com/GQdc7X7.png");
+  background-image: linear-gradient(120deg, black 0% 59%, rgba(0, 0, 0, 0) 79% 100%), url("https://i.imgur.com/IOe8TWQ.png");
   background-position: right;
   background-repeat: no-repeat;
-  background-size: 100%, 40%;
-  filter: grayscale(80%);
+  background-size: 100%, contain;
+  filter: grayscale(45%);
   width: 100%;
   height: 14vh;
   display: flex;
@@ -326,6 +345,9 @@ button {
 }
 .nav-container a {
   color: #9f9f9f;
+}
+.nav-container a:hover {
+  color: red;
 }
 
 .nav-form {
@@ -398,21 +420,23 @@ button {
   #nav-container {
     width: 100vw;
     max-width: 100%;
-    padding: 3vh 0;
+    padding: 1vh 0;
     transform: translate(-100%, 12vh);
     font-size: 200%;
+    background: black;
   }
 
   #nav-container-mobile {
     width: 100vw;
     max-width: 100%;
-    padding: 3vh 1em;
+    padding: 1vh 1em;
     transform: translate(0, 12vh);
     font-size: 200%;
+    background: black;
   }
 }
 .post-container-oct {
-  background: linear-gradient(165deg, #ffffff 0 52%, rgba(0, 0, 0, 0) 54% 100%);
+  background: linear-gradient(165deg, #a0a0a0 0 52%, rgba(0, 0, 0, 0) 54% 100%);
   position: relative;
   padding: 0.4em;
   margin-bottom: 0.5em;
@@ -422,13 +446,14 @@ button {
 
 .post-container {
   position: relative;
-  background: #a0a0a0;
+  background: black;
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: 10em;
   padding: 0.5em;
   border: 0.5em solid rgba(0, 0, 0, 0);
+  color: #9f9f9f;
   clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
 }
 
@@ -439,8 +464,16 @@ button {
   height: 100%;
   width: 65%;
 }
+.post-body-container h1 {
+  border-bottom: 1px solid #9f9f9f;
+  margin-bottom: 0.2em;
+}
 .post-body-container h3 {
   font-size: 75%;
+  margin-bottom: 0.2em;
+}
+.post-body-container b {
+  font-weight: 400;
 }
 
 .post-preview-image {
@@ -449,8 +482,13 @@ button {
   height: auto;
 }
 
+.profile-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .order-oct {
-  background: #242424;
+  background: #a0a0a0;
   position: relative;
   padding: 0.4em;
   margin-bottom: 0.5em;
@@ -460,12 +498,13 @@ button {
 
 .order-container {
   position: relative;
-  background: #dcdada;
+  background: black;
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: 20em;
   padding: 0.5em;
+  color: #9f9f9f;
   border: 0.5em solid rgba(0, 0, 0, 0);
   clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
 }
@@ -498,7 +537,7 @@ button {
   margin-bottom: 0.4em;
 }
 .order-body-container h1 {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #9f9f9f;
   margin-bottom: 0.4em;
 }
 .order-body-container h2 {
@@ -506,7 +545,7 @@ button {
   font-size: 75%;
   height: 100%;
   padding: 0.1em;
-  border: 1px solid black;
+  border: 1px solid #9f9f9f;
   margin-bottom: 0.4em;
 }
 .order-body-container form {
@@ -526,13 +565,12 @@ button {
 
 .bid-overlay {
   position: fixed;
-  background: rgba(19, 19, 19, 0.35);
   width: 100%;
   height: 110%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  transform: translateY(-5vh);
+  transform: translateY(-10vh);
   z-index: 4;
 }
 
@@ -541,7 +579,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: white;
+  background: #505050;
   border: 1px solid black;
   padding: 0.5em;
   border-radius: 0.5em;
@@ -557,6 +595,9 @@ button {
 
 .bid-button-lineup {
   display: flex;
+}
+.bid-button-lineup button {
+  margin-left: 0.5em;
 }
 
 /*# sourceMappingURL=App.css.map */

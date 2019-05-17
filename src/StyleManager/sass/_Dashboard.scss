@@ -1,7 +1,11 @@
 
+.dashboard{
+    display: flex;
+    flex-direction: column;
+}
 
 .dash-new-req-form-oct{
-    background: #242424;
+    background: rgb(160,160,160);
     position: relative;
     padding: .4em;
     margin-bottom: 1em;
@@ -14,7 +18,8 @@
     height: 18em;
     display: flex;
     position: relative;
-    background: white;
+    background: black;
+    color: #9f9f9f;
     padding: .5em;
     border: .5em solid rgba(0,0,0,0);
     clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
@@ -25,11 +30,11 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    background: white;
+    background: black;
     padding: .5em;
     input{
         width: 100%;
-        margin-bottom: .5em;
+        margin-bottom: .75em;
     }
     button{
         width: 30%;
@@ -51,55 +56,6 @@
     }
 }
 
-.review-payment-container-oct{
-    background:  #242424;
-    position: relative;
-    padding: .4em;
-    margin-bottom: .5em;
-    width: 100%;
-    clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
-}
-
-.review-payment-container{
-    display: flex;
-    justify-content: space-between;
-    height: 20em;
-    border: .5em solid white;
-    background: white;
-    padding: .5em;
-    clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
-}
-
-.review-payment-image{
-    width: 33%;
-    max-height: 70%;
-    object-fit: cover;
-}
-
-.review-info-bounding{
-    width: 64%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.review-info-breakout{
-    height: 66%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    h1{
-        margin-bottom: .75em;
-    }
-    h3{
-        font-size: 75%
-    }
-    h2{
-        font-size: 85%
-    }
-}
-
 .req-manager-container{
     width: 100%;
     display: flex;
@@ -111,6 +67,9 @@
     width: 49%;
     display: flex;
     flex-direction: column;
+    .post-container-oct{
+        width: 100%;
+    }
 }
 
 .req-manager-bid-container{
@@ -118,7 +77,7 @@
 }
 
 .req-manager-bid-display-oct{
-    background: linear-gradient(165deg, #242424 0 52%, rgba(0,0,0,0) 54% 100%);
+    background: linear-gradient(165deg, rgb(160,160,160) 0 52%, rgba(0,0,0,0) 54% 100%);
     position: relative;
     padding: .4em;
     margin-bottom: .5em;
@@ -135,7 +94,8 @@
     flex-direction: column;
     justify-content: space-between;
     border: .5em solid rgba(0,0,0,0);
-    background: rgb(220, 218, 218);
+    background: rgb(0, 0, 0);
+    color: #9f9f9f;
     clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
     h3{
         font-size: 75%;
@@ -145,10 +105,61 @@
     }
 }
 
+.review-payment-container-oct{
+    background:  rgb(160,160,160);
+    position: relative;
+    padding: .4em;
+    margin-bottom: .5em;
+    width: 100%;
+    clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
+}
+
+.review-payment-container{
+    display: flex;
+    justify-content: space-between;
+    height: 20em;
+    border: .5em solid black;
+    background: black;
+    color: #9f9f9f;
+    padding: .5em;
+    clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
+    h1{
+        border-bottom: 1px solid #9f9f9f;
+        margin-bottom: .25em;
+    }
+    h2{
+        border: 1px solid #9f9f9f;
+        margin-bottom: .4em;
+        font-size: 75%;
+        height: 4.5em;
+    }
+}
+
+.review-payment-image{
+    width: 33%;
+    max-height: 70%;
+    object-fit: cover;
+}
+
+.review-info-bounding{
+    width: 64%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-info-breakout{
+    height: 66%;
+    display: flex;
+    flex-direction: column;
+}
+
 .checkout{
     height: 33%;
     width: 70%;
     h2{
-        font-size: 85%
+        font-size: 85%;
+        border: none;
+        height: none;
     }
 }

@@ -30,13 +30,15 @@ class Profile extends Component {
     render(){
         return(
             <div id='background'>
-                <div id='top-level-container'>
+                <div id='top-level-container' className='profile-container'>
                     <h1 id='top-level-title'>Profile</h1>
+                    <span>Projects Ordered from You</span>
                     {this.state.sellerOrders.map((ele, i) => {
                         return (
                             <SellerOrder key={i} {...ele} i={i} handleShippedOrder={this.handleShippedOrder} />
                         )
                     })}
+                    <span>Projects You Ordered</span>
                     {this.state.clientOrders.map((ele, i) => {
                         return (
                             <ClientOrder key={i} {...ele} />

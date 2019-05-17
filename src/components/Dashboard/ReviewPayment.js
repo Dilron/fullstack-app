@@ -30,16 +30,14 @@ class ReviewPayment extends Component {
                     <img src={img_ref} className='review-payment-image' />
                     <div className='review-info-bounding'>
                         <div className='review-info-breakout'>
-                            <div className='left-review-display'>
-                                <h1>Reviewing <u>{username}`s</u> bid <br/>On your post: <u>{title}</u> <br/>Using: <u>{printer}</u> </h1>
+                                <h1>Reviewing <b><i>{username}`s</i></b> bid <br/></h1>
+                                <h1>On your post: <b><i>{title}</i></b> <br/></h1>
+                                <h1>Using: <i>{printer}</i> </h1>
                                 <h2><i>{bid_message}</i> </h2>
-                            </div>
-                            <div className='right-review-display'>
-                                <h2>To be printed and shipped in <u>{est_processing_time}</u> days <br/> </h2>
-                                <h2>and shipped to address: <br/></h2>
-                                <h2><u>{street}</u>, <u>{city}</u><br/> </h2>
-                                <h2><u>{state}</u>, <u>{zip}</u> </h2>
-                            </div>
+                                <h2>To be printed and shipped in <b><i>{est_processing_time}</i></b> days <br/> 
+                                and shipped to address: <br/>
+                                <b><i>{street}</i></b>, <b><i>{city}</i></b><br/>
+                                <b><i>{state}</i></b>, <b><i>{zip}</i></b> </h2>
                         </div>
                         <div className='checkout-bounding'>
                             <StripeProvider apiKey="pk_test_ypv91AWQYsLctkB7ZWRuHHfz008iIfansv">

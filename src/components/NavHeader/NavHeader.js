@@ -33,7 +33,7 @@ class NavHeader extends Component {
                         <h3>Crowd Sourced 3D Printing</h3>
                      </section>
                 </div>
-                <Nav/>
+                <Nav mobileToggleNav={this.mobileToggleNav}/>
             </div>
        )
     }

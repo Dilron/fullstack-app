@@ -39,7 +39,7 @@ class SellerOrder extends Component {
     render(){
         const {img_ref, ship_img, title, username, message,
              bid_message, link_ref, printer, est_processing_time, 
-             state, street, city, zip, shipped, ship_message} = this.props
+             state, street, city, zip, shipped, ship_message, bid_val} = this.props
         return(
             <div className='order-oct'>
                 <div className='order-container'>
@@ -62,7 +62,7 @@ class SellerOrder extends Component {
                         ) }
                     </div>
                     <div className='order-body-container'>
-                        <h1>Order: <u>{title}</u> for user: <u>{username}</u> </h1>
+                        <h1>Order: <b><i>{title}</i></b> for user: <b><i>{username}</i></b> </h1>
                         <section>
                             <h2><i>{message}</i></h2>
                             <h2><i>{bid_message}</i></h2>
@@ -71,17 +71,17 @@ class SellerOrder extends Component {
                         <section>
                             <h2>
                                 Printed on: <br/>
-                                <u>{printer}</u> <br/>
+                                <b><i>{printer}</i></b> <br/>
                                 Estimated build time: <br/>
-                                <u>{est_processing_time}</u> days
+                                <b><i>{est_processing_time}</i></b> days
                             </h2>
                             <h2>Shipping to address:<br/>
-                                <u>{street}</u><br/>
-                                <u>{city}</u><br/>
-                                <u>{state}</u>, <u>{zip}</u>
+                                <b><i>{street}</i></b><br/>
+                                <b><i>{city}</i></b><br/>
+                                <b><i>{state}</i></b>, <b><i>{zip}</i></b>
                             </h2>
                         </section>
-                        <h1>Status: {shipped ? 'Completed and Shipped' : 'Processing' } </h1>
+                        <h1>Status: <b><i>{shipped ? 'Completed and Shipped' : 'Processing' }</i></b> Paid: <b><i>{bid_val}</i></b> </h1>
                         {shipped 
                         ?
                         (<section>

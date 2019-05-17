@@ -36,7 +36,6 @@ class CreateRequestForm extends Component {
                 <div className='dash-new-req-form-oct'>
                     <div className='dash-new-req-form-container'>
                         <form id='dash-new-req-form' className='dash-new-req-form' onSubmit={this.handleNewReqSubmit}>
-                            <h3>Create new print request:</h3>
                             <input name='newPostTitle'
                             type='text'
                             placeholder='Post title'

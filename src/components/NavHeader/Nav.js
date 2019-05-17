@@ -22,7 +22,6 @@ class Nav extends Component {
     }
 
     async componentDidMount() {
-        console.log('ping component did mount')
         const res = await axios.get('/auth/returning-user').catch(err => console.log('error checking return user: ', err))
             if(res.data){
                 console.log('ping if true')
@@ -185,13 +184,13 @@ class Nav extends Component {
                             <div className='link-box-oct'>
                                 <div className='link-box'>
                                     <Link to='/'>
-                                        <h1>Home</h1>
+                                        <h1 onClick={() => this.props.mobileToggleNav()} >Home</h1>
                                     </Link>
                                     <Link to='/profile'>
-                                        <h1>Profile</h1>
+                                        <h1 onClick={() => this.props.mobileToggleNav()} >Profile</h1>
                                     </Link>
                                     <Link to='/dashboard'>
-                                        <h1>Dashboard</h1>
+                                        <h1 onClick={() => this.props.mobileToggleNav()} >Dashboard</h1>
                                     </Link>
                                     <Link to='/'>
                                         <h1 onClick={() => this.handleLogout()}>Logout</h1> 

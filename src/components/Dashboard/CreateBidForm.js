@@ -55,9 +55,9 @@ class CreateBidForm extends Component {
                         className='post-preview-image' />
                         <div className='post-body-container'>
                             <div className='post-info-container'>
-                                <h1>{this.props.bid.title}, from {this.props.bid.username}</h1>
-                                <h3>{this.props.bid.link_ref}</h3>
-                                <h3>{this.props.bid.message}</h3>
+                                <h1><b><i>{this.props.bid.title}</i></b>, from <b><i>{this.props.bid.username}</i></b></h1>
+                                <h3><u>{this.props.bid.link_ref}</u></h3>
+                                <h3><i>{this.props.bid.message}</i></h3>
                             </div>
                         </div>
                     </div>

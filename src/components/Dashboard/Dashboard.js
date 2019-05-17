@@ -11,8 +11,11 @@ class Dashboard extends Component {
             <div id='background'>
                 <div id='top-level-container' className='dashboard'>
                     <h1 id='top-level-title' >Dashboard</h1>
+                    <span>Create New Project Request</span>
                     <CreateRequestForm />
+                    <span>Manage Your Requests</span>
                     <RequestManager />
+                    <span>Review and Payout a Bid</span>
                     <ReviewPayment />
                 </div>
             </div>

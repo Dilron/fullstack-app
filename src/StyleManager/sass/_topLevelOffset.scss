@@ -1,6 +1,6 @@
 #background{
     position: relative;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.92) 0%, rgba(45, 45, 45, 0.591) 30% 100%),
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.92) 0%, rgba(34, 34, 34, 0.667) 30% 100%),
     url('https://i.imgur.com/2mOK9Uq.png');
     background-position: center;
     background-size: cover;
@@ -26,12 +26,14 @@
     font-size: 120%;
     width: 90%;
     height: 2em;
+    font-weight: bold;
+    font-style: italic;
     background: linear-gradient(120deg, rgba(0,0,0,0) 0% 6%, rgb(160, 160, 160) 7% 60%, rgba(0,0,0,0) 61% 100%)
 }
 
 @media (max-width: 415px){
     #top-level-container{
         width: 100%;
-        transform: translate(0, 14vh);
+        transform: translate(0,0);
     }
 }

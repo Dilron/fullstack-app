@@ -51,7 +51,7 @@ class RequestManager extends Component {
                                     <img className='post-preview-image' src={ele.img_ref} />
                                     <div className='post-body-container'>
                                         <div className='post-info-container'>
-                                            <h1><u>{ele.title}</u></h1>
+                                            <h1><b><i>{ele.title}</i></b></h1>
                                             <h3><u>{ele.link_ref}</u></h3>
                                             <h3><i>{ele.message}</i></h3>
                                         </div>
@@ -68,12 +68,12 @@ class RequestManager extends Component {
                             <div className='req-manager-bid-display-oct' key={i}>
                                 <div className='req-manager-bid-display' >
                                     <div>
-                                        <h1>Bid from: <u>{ele.username}</u> </h1>
+                                        <h1>Bid from: <b><i>{ele.username}</i></b> </h1>
                                         <h3><i>{ele.bid_message}</i></h3>
                                     </div>
                                     <div>
-                                        <h2>Cost: <u>${ele.bid_val}</u>,   Printer: <u>{ele.printer}</u> <br/> </h2>
-                                        <h2>Estimated to print and ship in <u>{ele.est_processing_time}</u> days</h2>
+                                        <h2>Cost: <b><i>${ele.bid_val}</i></b>,   Printer: <b><i>{ele.printer}</i></b> <br/> </h2>
+                                        <h2>Estimated to print and ship in <b><i>{ele.est_processing_time}</i></b> days</h2>
                                         <button onClick={() => this.handleToReview(ele)} >Review and Pay</button>
                                     </div>
                                 </div>
