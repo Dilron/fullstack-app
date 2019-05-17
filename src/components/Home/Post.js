@@ -25,7 +25,7 @@ class Post extends Component{
                     className='post-preview-image'  />
                     <div className='post-body-container'>
                         <div className='post-info-container'>
-                            <h1><u>{this.props.title}</u>, from <u>{this.props.username}</u></h1>
+                            <h1><u>{this.props.title}</u> <br/>from <u>{this.props.username}</u></h1>
                             <h3 ><u>{this.props.link_ref}</u></h3>
                             <h3><i>{this.props.message}</i></h3>
                         </div>

@@ -22,15 +22,17 @@ class Home extends Component{
 
     render(){
         return(
-            <div id='top-level-container' className='home-container'>
-                <h1 id='top-level-title'>Home</h1>
-                {this.props.activeBid && <CreateBidForm /> }
-                <div className='posts-display'>
-                {this.state.postsLoading && <h1>Loading</h1>}
-                {!this.state.postsLoading && this.state.postsDisplay.map((ele, i) => {
-                    return (<Post key={i+1} {...ele} />)
-                })}
+            <div id='background'>
+                <div id='top-level-container' className='home-container'>
+                    <h1 id='top-level-title'>Home</h1>
+                    {this.props.activeBid && <CreateBidForm /> }
+                    <div className='posts-display'>
+                    {this.state.postsLoading && <h1>Loading</h1>}
+                    {!this.state.postsLoading && this.state.postsDisplay.map((ele, i) => {
+                        return (<Post key={i+1} {...ele} />)
+                    })}
 
+                    </div>
                 </div>
             </div>
         )

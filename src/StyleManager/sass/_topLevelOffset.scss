@@ -1,12 +1,19 @@
+#background{
+    position: relative;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.92) 0%, rgba(45, 45, 45, 0.591) 30% 100%),
+    url('https://i.imgur.com/2mOK9Uq.png');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    min-height: 86vh;
+    transform: translateY(14vh)
+}
+
 #top-level-container {
     width: 78vw;
     height: 100%;
-    min-height: 86vh;
-    transform: translate(22vw, 14vh);
-    position: relative;
-    background-image: linear-gradient(rgba(0,0,0,0) 0% 0%, rgb(220, 218, 218, .6) 0% 100%),
-    url('https://i.imgur.com/uiDXUgf.png');
-    background-size: cover;
+    transform: translateX(22vw);
     padding: 4em 1em 1em 1em;
 }
 
@@ -19,7 +26,7 @@
     font-size: 120%;
     width: 90%;
     height: 2em;
-    background: linear-gradient(120deg, rgba(0,0,0,0) 0% 6%, #505050 7% 60%, rgba(0,0,0,0) 61% 100%)
+    background: linear-gradient(120deg, rgba(0,0,0,0) 0% 6%, rgb(160, 160, 160) 7% 60%, rgba(0,0,0,0) 61% 100%)
 }
 
 @media (max-width: 415px){

@@ -66,14 +66,21 @@ button {
   font-family: "Roboto Slab", serif;
 }
 
+#background {
+  position: relative;
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.92) 0%, rgba(45, 45, 45, 0.591) 30% 100%), url("https://i.imgur.com/2mOK9Uq.png");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  min-height: 86vh;
+  transform: translateY(14vh);
+}
+
 #top-level-container {
   width: 78vw;
   height: 100%;
-  min-height: 86vh;
-  transform: translate(22vw, 14vh);
-  position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, 0) 0% 0%, rgba(220, 218, 218, 0.6) 0% 100%), url("https://i.imgur.com/uiDXUgf.png");
-  background-size: cover;
+  transform: translateX(22vw);
   padding: 4em 1em 1em 1em;
 }
 
@@ -86,7 +93,7 @@ button {
   font-size: 120%;
   width: 90%;
   height: 2em;
-  background: linear-gradient(120deg, rgba(0, 0, 0, 0) 0% 6%, #505050 7% 60%, rgba(0, 0, 0, 0) 61% 100%);
+  background: linear-gradient(120deg, rgba(0, 0, 0, 0) 0% 6%, #a0a0a0 7% 60%, rgba(0, 0, 0, 0) 61% 100%);
 }
 
 @media (max-width: 415px) {
@@ -273,6 +280,7 @@ button {
   align-items: center;
   position: fixed;
   z-index: 5;
+  box-shadow: 0 3px 2px 2px rgba(0, 0, 0, 0.4);
 }
 .header-container h1 {
   font-size: 200%;
@@ -292,10 +300,7 @@ button {
 
 .nav-container {
   position: fixed;
-  background-image: linear-gradient(black 0% 1%, rgba(12, 12, 12, 0.783) 2% 100%), url("https://i.imgur.com/tCPbzfu.png");
-  background-size: contain;
-  background-position: top;
-  background-attachment: fixed;
+  background: rgba(0, 0, 0, 0);
   color: #9f9f9f;
   width: 22%;
   height: 87vh;
@@ -348,6 +353,7 @@ button {
 .profile-box-oct {
   background: #505050;
   padding: 0.3em;
+  box-shadow: 3px 0 5px 4px rgba(0, 0, 0, 0.8);
 }
 
 .profile-box {
@@ -364,6 +370,7 @@ button {
   padding: 0.3em;
   width: 100%;
   margin-top: 1em;
+  box-shadow: 3px 0 5px 4px rgba(0, 0, 0, 0.8);
 }
 
 .link-box {
@@ -405,7 +412,7 @@ button {
   }
 }
 .post-container-oct {
-  background: linear-gradient(165deg, #242424 0 52%, rgba(0, 0, 0, 0) 54% 100%);
+  background: linear-gradient(165deg, #ffffff 0 52%, rgba(0, 0, 0, 0) 54% 100%);
   position: relative;
   padding: 0.4em;
   margin-bottom: 0.5em;
@@ -415,7 +422,7 @@ button {
 
 .post-container {
   position: relative;
-  background: #dcdada;
+  background: #a0a0a0;
   display: flex;
   justify-content: space-between;
   width: 100%;

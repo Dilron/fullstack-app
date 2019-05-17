@@ -29,19 +29,21 @@ class Profile extends Component {
 
     render(){
         return(
-            <div id='top-level-container'>
-                <h1 id='top-level-title'>Profile</h1>
-                {this.state.sellerOrders.map((ele, i) => {
-                    return (
-                        <SellerOrder key={i} {...ele} i={i} handleShippedOrder={this.handleShippedOrder} />
-                    )
-                })}
-                {this.state.clientOrders.map((ele, i) => {
-                    return (
-                        <ClientOrder key={i} {...ele} />
-                    )
-                })}
+            <div id='background'>
+                <div id='top-level-container'>
+                    <h1 id='top-level-title'>Profile</h1>
+                    {this.state.sellerOrders.map((ele, i) => {
+                        return (
+                            <SellerOrder key={i} {...ele} i={i} handleShippedOrder={this.handleShippedOrder} />
+                        )
+                    })}
+                    {this.state.clientOrders.map((ele, i) => {
+                        return (
+                            <ClientOrder key={i} {...ele} />
+                        )
+                    })}
 
+                </div>
             </div>
         )
     }
