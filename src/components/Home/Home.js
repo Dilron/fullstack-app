@@ -27,7 +27,7 @@ class Home extends Component{
                 <div id='top-level-container' className='home-container'>
                     <h1 id='top-level-title'>Home</h1>
                     <span>Recently Completed Projects</span>
-                        <ProjectCarousel className='carousel-container'/>
+                        <ProjectCarousel />
                     {this.props.activeBid && <CreateBidForm /> }
                     <span>Recent Bids</span>
                     <div className='posts-display'>

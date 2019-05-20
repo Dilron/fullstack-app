@@ -124,7 +124,7 @@ class Nav extends Component {
                                 <h1>account?</h1>
                                 <button onClick={() => this.props.showRegister()}>Register</button>
                                 <Link to='/'>
-                                    <h1>Home</h1>
+                                    <h1 onClick={() => this.props.mobileToggleNav()}>Home</h1>
                                 </Link>
                             </form>
                     )}
@@ -164,7 +164,7 @@ class Nav extends Component {
                                 <button>Register</button>
                                 <button onClick={() => this.props.showLogin()}>Cancel</button>
                                 <Link to='/'>
-                                    <h1>Home</h1>
+                                    <h1 onClick={() => this.props.mobileToggleNav()}>Home</h1>
                                 </Link>
                             </form>
                     )}
