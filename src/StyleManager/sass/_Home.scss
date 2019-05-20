@@ -6,16 +6,19 @@
     align-items: center;
 }
 
+.mark-div{
+    width: 70%;
+}
+
 .carousel{
     width: 70%;
-    height: 20em;
 }
 
 .carousel-slide{
     height: 100%;
-    width: 70%;
-    margin: 0;
-    border: 0;
+    width: 100%;
+    padding: 2em;
+    background: red;
 }
 
 .carousel-image{

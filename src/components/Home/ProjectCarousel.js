@@ -23,9 +23,9 @@ class ProjectCarousel extends Component {
                 {this.state.loadingCarousel ?
                 <div></div>
                 :
-                <Carousel autoPlay={true} 
+                <Carousel
                 stopOnHover={false} 
-                autoPlay={5000}
+                autoPlay={false}
                 infiniteLoop={true}
                 showStatus={false}
                 showThumbs={false} >
