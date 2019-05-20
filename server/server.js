@@ -8,7 +8,6 @@ const postsCtrl = require('./controllers/postsController')
 const stripeCtrl = require('./controllers/stripeController')
 const bsCtrl = require('./controllers/bullshitController')
 const ordersCtrl = require('./controllers/ordersController')
-const path = require('path')
 
 const {SESSION_SECRET, CONNECTION_STRING, SERVER_PORT} = process.env
 
@@ -55,6 +54,4 @@ app.post('/request/charge', stripeCtrl.createCharge)
 app.post('/charge', bsCtrl.createCharge);
 
 //-----------
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../build/index.html'))
-})
+

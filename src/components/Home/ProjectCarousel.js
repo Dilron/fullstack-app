@@ -33,7 +33,7 @@ class ProjectCarousel extends Component {
                         return(
                             <div className='carousel-slide' key={ele.order_id}>
                                 <img className='carousel-img' src={ele.ship_img} />
-                                <p>{i}</p>
+                                <p>{ele.ship_message}</p>
                             </div>
                         )
                     })}
