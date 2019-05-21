@@ -4,4 +4,4 @@ join user_login ul
 on p.user_id = ul.login_id
 where bid_accepted = false
 order by post_id desc
-limit 5 offset ${offset};
+limit 6 offset ${offset};
