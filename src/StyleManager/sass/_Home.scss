@@ -68,8 +68,17 @@
 }
 
 .posts-display {
-    @include flex-justify-align(space-between, default, default);
+    @include flex-justify-align(space-between, normal, row);
     width: 100%;
     flex-wrap: wrap;
     max-width: 740px;
+}
+
+.page-buttons{
+    width: 100%;
+    @include flex-justify-align(space-between, normal, row);
+    margin-bottom: .75em;
+    button{
+        width: 30%;
+    }
 }

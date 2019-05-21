@@ -17,6 +17,13 @@ class Home extends Component{
         }
     }
 
+    handlePostsPage = (num) => {
+        const newOffset = this.state.offset + num
+        axios.get(`/post/read-5/${newOffset}`).then(res => {
+            this.setState({postsDisplay: res.data, postsLoading: false, offset: newOffset})
+        }).catch(err => console.log('error getting posts: ', err))
+    }
+
     componentDidMount(){
         axios.get(`/post/read-5/${this.state.offset}`).then(res => {
             this.setState({postsDisplay: res.data, postsLoading: false})
@@ -27,6 +34,7 @@ class Home extends Component{
     }
 
     render(){
+        const {offset} = this.state
         return(
             <div id='background'>
                 <div id='top-level-container' className='home-container'>
@@ -39,13 +47,24 @@ class Home extends Component{
                     <ProjectCarousel carousel={this.state.carousel} />
                     }
                     {this.props.activeBid && <CreateBidForm /> }
-                    <span>Recent Bids</span>
+                    <span>Recent Project Request</span>
                     <div className='posts-display'>
-                    {this.state.postsLoading && <h1>Loading</h1>}
-                    {!this.state.postsLoading && this.state.postsDisplay.map((ele, i) => {
-                        return (<Post key={i+1} {...ele} />)
-                    })}
-
+                    <div className='page-buttons'>
+                        {offset ? 
+                            (<button onClick={() => this.handlePostsPage(-6)}>Previous</button> ) 
+                            : (<button disabled>Previous</button>)  }
+                        <button onClick={() => this.handlePostsPage(6)}>Next</button>
+                    </div>
+                        {this.state.postsLoading && <h1>Loading</h1>}
+                        {!this.state.postsLoading && this.state.postsDisplay.map((ele, i) => {
+                            return (<Post key={i+1} {...ele} />)
+                        })}
+                    <div className='page-buttons'>
+                        {offset ? 
+                            (<button onClick={() => this.handlePostsPage(-6)}>Previous</button> ) 
+                            : (<button disabled>Previous</button>)  }
+                        <button onClick={() => this.handlePostsPage(6)}>Next</button>
+                    </div>
                     </div>
                 </div>
             </div>

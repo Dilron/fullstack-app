@@ -94,8 +94,10 @@
 
 .profile-box-oct{
     background: #505050;
-    padding: .3em;
+    padding: .1em;
+    // clip-path: polygon(7% 0, 93% 0, 100% 11%, 100% 89%, 93% 100%, 7% 100%, 0 89%, 0 11%);
     box-shadow: 3px 0 5px 4px rgba(0,0,0,0.4);
+
 }
 
 .profile-box{
@@ -109,19 +111,22 @@
 
 .link-box-oct{
     background: #505050;
-    padding: .3em;
+    padding: .1em;
     width: 100%;
     margin-top: 1em;
     box-shadow: 3px 0 5px 4px rgba(0,0,0,0.4);
+    // clip-path: polygon(7% 0, 93% 0, 100% 11%, 100% 89%, 93% 100%, 7% 100%, 0 89%, 0 11%);
+    
 }
 
 .link-box{
+    @include flex-justify-align(center, default, column);
     width: 100%;
     background: black;
     padding: .4em .1em;
     clip-path: polygon(7% 0, 93% 0, 100% 11%, 100% 89%, 93% 100%, 7% 100%, 0 89%, 0 11%);
     h1{
-        margin: 2vh 0;
+        margin: 1vh 0 1vh 1em;
     }
 }
 

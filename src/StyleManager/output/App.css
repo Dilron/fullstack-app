@@ -1,6 +1,6 @@
 .post-container-oct, .carousel-container, .req-manager-bid-display-oct {
   background: linear-gradient(165deg, white 0 52%, rgba(0, 0, 0, 0) 54% 100%);
-  padding: 0.4em;
+  padding: 0.2em;
   clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
 }
 
@@ -53,7 +53,7 @@ table {
 }
 
 u {
-  color: #a20000;
+  color: red;
 }
 
 input {
@@ -134,14 +134,15 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: default;
-  align-items: default;
+  align-items: normal;
+  overflow: clip;
 }
 
 .dash-new-req-form-oct {
   max-width: 740px;
   background: white;
   position: relative;
-  padding: 0.4em;
+  padding: 0.2em;
   margin-bottom: 1em;
   width: 100%;
   clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
@@ -164,7 +165,7 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: default;
-  align-items: default;
+  align-items: normal;
   position: relative;
   background: #222222;
   padding: 0.5em;
@@ -186,22 +187,26 @@ span {
 .req-form-state-zip {
   width: 100%;
   display: flex;
-  flex-direction: default;
+  flex-direction: row;
   justify-content: space-around;
-  align-items: default;
+  align-items: normal;
 }
 .req-form-state-zip input {
   width: 45%;
 }
 
+@media (max-width: 550px) {
+  .dash-new-req-form button {
+    width: 60%;
+  }
+}
 .req-manager-container {
   max-width: 740px;
   width: 100%;
   display: flex;
-  flex-direction: default;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: default;
-  margin-bottom: 1em;
+  align-items: normal;
 }
 
 .req-manager-display {
@@ -209,7 +214,7 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: default;
-  align-items: default;
+  align-items: normal;
 }
 .req-manager-display .post-container-oct {
   width: 100%;
@@ -236,7 +241,7 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: default;
+  align-items: normal;
   border: 0.5em solid rgba(0, 0, 0, 0);
   background: #222222;
   color: #9f9f9f;
@@ -248,11 +253,28 @@ span {
   font-size: 85%;
 }
 
+@media (max-width: 550px) {
+  .req-manager-display .post-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: normal;
+    height: 18em;
+  }
+  .req-manager-display .post-preview-image {
+    width: 100%;
+    height: 35%;
+  }
+  .req-manager-display .post-body-container {
+    width: 100%;
+    height: 60%;
+  }
+}
 .review-payment-container-oct {
   max-width: 740px;
   background: white;
   position: relative;
-  padding: 0.4em;
+  padding: 0.2em;
   margin-bottom: 0.5em;
   width: 100%;
   clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
@@ -260,9 +282,9 @@ span {
 
 .review-payment-container {
   display: flex;
-  flex-direction: default;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: default;
+  align-items: normal;
   height: 20em;
   border: 0.5em solid #222222;
   background: #222222;
@@ -293,7 +315,7 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: default;
-  align-items: default;
+  align-items: normal;
 }
 
 .review-info-breakout {
@@ -301,7 +323,7 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: default;
-  align-items: default;
+  align-items: normal;
 }
 
 .checkout {
@@ -317,6 +339,25 @@ span {
   height: none;
 }
 
+@media (max-width: 550px) {
+  .review-payment-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 28em;
+  }
+
+  .review-payment-image {
+    width: 100%;
+    height: 35%;
+  }
+
+  .review-info-bounding {
+    width: 100%;
+    height: 65%;
+  }
+}
 .home-container {
   display: flex;
   flex-direction: column;
@@ -381,12 +422,24 @@ span {
 }
 .posts-display {
   display: flex;
-  flex-direction: default;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: default;
+  align-items: normal;
   width: 100%;
   flex-wrap: wrap;
   max-width: 740px;
+}
+
+.page-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: normal;
+  margin-bottom: 0.75em;
+}
+.page-buttons button {
+  width: 30%;
 }
 
 .header-container {
@@ -477,7 +530,7 @@ span {
 
 .profile-box-oct {
   background: #505050;
-  padding: 0.3em;
+  padding: 0.1em;
   box-shadow: 3px 0 5px 4px rgba(0, 0, 0, 0.4);
 }
 
@@ -492,20 +545,24 @@ span {
 
 .link-box-oct {
   background: #505050;
-  padding: 0.3em;
+  padding: 0.1em;
   width: 100%;
   margin-top: 1em;
   box-shadow: 3px 0 5px 4px rgba(0, 0, 0, 0.4);
 }
 
 .link-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: default;
   width: 100%;
   background: black;
   padding: 0.4em 0.1em;
   clip-path: polygon(7% 0, 93% 0, 100% 11%, 100% 89%, 93% 100%, 7% 100%, 0 89%, 0 11%);
 }
 .link-box h1 {
-  margin: 2vh 0;
+  margin: 1vh 0 1vh 1em;
 }
 
 @media (max-width: 415px) {
@@ -584,6 +641,11 @@ span {
   height: auto;
 }
 
+@media (max-width: 550px) {
+  .post-container-oct {
+    width: 100%;
+  }
+}
 .profile-container {
   display: flex;
   flex-direction: column;
@@ -595,7 +657,7 @@ span {
   max-width: 740px;
   background: white;
   position: relative;
-  padding: 0.4em;
+  padding: 0.2em;
   margin-bottom: 0.5em;
   width: 100%;
   clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);

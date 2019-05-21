@@ -1,13 +1,14 @@
 
 .dashboard{
-    @include flex-justify-align(default, default, column);
+    @include flex-justify-align(default, normal, column);
+    overflow: clip;
 }
 
 .dash-new-req-form-oct{
     max-width: 740px;
     background: white;
     position: relative;
-    padding: .4em;
+    padding: .2em;
     margin-bottom: 1em;
     width: 100%;
     clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
@@ -27,7 +28,7 @@
 
 .dash-new-req-form{
     width: 49%;
-    @include flex-justify-align(default, default, column);
+    @include flex-justify-align(default, normal, column);
     position: relative;
     background: $post-background;
     padding: .5em;
@@ -48,22 +49,29 @@
 
 .req-form-state-zip{
     width: 100%;
-    @include flex-justify-align(space-around, default, default);
+    @include flex-justify-align(space-around, normal, row);
     input{
         width: 45%
+    }
+}
+
+@media(max-width: 550px){
+    .dash-new-req-form{
+        button{
+            width: 60%;
+        }
     }
 }
 
 .req-manager-container{
     max-width: 740px;
     width: 100%;
-    @include flex-justify-align(space-between, default, default);
-    margin-bottom: 1em;
+    @include flex-justify-align(space-between, normal, row);
 }
 
 .req-manager-display{
     width: 49%;
-    @include flex-justify-align(default, default, column);
+    @include flex-justify-align(default, normal, column);
     .post-container-oct{
         width: 100%;
     }
@@ -90,7 +98,7 @@
     width: 100%;
     height: 10em;
     padding: .5em;
-    @include flex-justify-align(space-between, default, column);
+    @include flex-justify-align(space-between, normal, column);
     border: .5em solid rgba(0,0,0,0);
     background: $post-background;
     color: $text-light;
@@ -103,18 +111,35 @@
     }
 }
 
+@media(max-width: 550px){
+    .req-manager-display{
+        .post-container{
+            @include flex-justify-align(space-between, normal, column);
+            height: 18em;
+        }
+        .post-preview-image{
+            width: 100%;
+            height: 35%;
+        }
+        .post-body-container{
+            width: 100%;
+            height: 60%;
+        }
+    }
+}
+
 .review-payment-container-oct{
     max-width: 740px;
     background:  white;
     position: relative;
-    padding: .4em;
+    padding: .2em;
     margin-bottom: .5em;
     width: 100%;
     clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
 }
 
 .review-payment-container{
-    @include flex-justify-align(space-between, default, default);
+    @include flex-justify-align(space-between, normal, row);
     height: 20em;
     border: .5em solid $post-background;
     background: $post-background;
@@ -142,12 +167,12 @@
 .review-info-bounding{
     width: 64%;
     height: 100%;
-    @include flex-justify-align(default, default, column);
+    @include flex-justify-align(default, normal, column);
 }
 
 .review-info-breakout{
     height: 66%;
-    @include flex-justify-align(default, default, column);
+    @include flex-justify-align(default, normal, column);
 }
 
 .checkout{
@@ -160,5 +185,21 @@
         font-size: 85%;
         border: none;
         height: none;
+    }
+}
+
+
+@media(max-width: 550px){
+    .review-payment-container{
+        @include flex-justify-align(flex-start, flex-start, column);
+        height: 28em;
+    }
+    .review-payment-image{
+        width: 100%;
+        height: 35%;
+    }
+    .review-info-bounding{
+        width: 100%;
+        height: 65%;
     }
 }

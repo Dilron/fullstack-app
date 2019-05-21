@@ -10,7 +10,7 @@ $text-light: #9f9f9f;
 
 %oct-clip{
 	background: linear-gradient(165deg, white 0 52%, rgba(0,0,0,0) 54% 100%);
-	padding: .4em;
+	padding: .2em;
 	clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
 }
 
@@ -58,7 +58,7 @@ table {
 }
 //blanket style changes
 u{
-	color: rgb(162, 0, 0);
+	color: red;
 }
 
 input{

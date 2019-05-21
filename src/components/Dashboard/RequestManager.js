@@ -20,10 +20,14 @@ class RequestManager extends Component {
     }
 
     handleShowBids = async (postId) => {
-        console.log('react log post id', postId)
         const bids = await axios.get(`/post/read/recieved-bids/${postId}`)
-        console.log(bids.data)
         this.setState({bidsDisplay: bids.data})
+        const reqMngr = document.getElementsByClassName('req-manager-container')
+        if(reqMngr[0].id === 'req-manager-container'){
+            reqMngr[0].id = 'req-manager-container-mobile'
+        } else {
+            reqMngr[0].id = 'req-manager-container'
+        }
     }
 
     handleToReview = async (bidObj) => {
