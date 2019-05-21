@@ -6,11 +6,9 @@
 }
 
 .carousel-container{
+    @extend %oct-clip;
     width: 100%;
-    background: linear-gradient(165deg, red 0 52%, rgba(0,0,0,0) 54% 100%);
     position: relative;
-    padding: .4em;
-    clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
     max-width: 740px;
 }
 
@@ -27,12 +25,12 @@
 }
 
 .carousel-slide{
+    @extend %container-clip;
     height: 20em;
-    clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
     width: 100%;
     padding: 1em 3em 2em 3em;
-    background: black;
-    color: #9f9f9f;
+    background: $post-background;
+    color: $text-light;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -42,7 +40,7 @@
     text-align: left;
     width: 38%;
     h1{
-        border-bottom: 1px solid #9f9f9f;
+        border-bottom: 1px solid $text-light;
         margin-bottom: .2em;
     }
     h3{
@@ -70,9 +68,8 @@
 }
 
 .posts-display {
+    @include flex-justify-align(space-between, default, default);
     width: 100%;
-    display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     max-width: 740px;
 }

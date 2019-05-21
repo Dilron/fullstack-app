@@ -42,6 +42,7 @@ app.get('/post/read-5/:offset', postsCtrl.get5Posts)
 app.get('/post/read/user-reqs/:id', postsCtrl.getRequests)
 app.get('/post/read/recieved-bids/:id', postsCtrl.getBids)
 app.get('/post/read/shipping/:id', postsCtrl.getShipping)
+app.delete('/post/delete/:postId', postsCtrl.deleteRequest)
 
 app.post('/order/new', ordersCtrl.createNewOrder)
 app.put('/order/request', ordersCtrl.updatePostBidStatus)

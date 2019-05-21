@@ -187,7 +187,7 @@ class Nav extends Component {
                                         <h1 onClick={() => this.props.mobileToggleNav()} >Home</h1>
                                     </Link>
                                     <Link to='/profile'>
-                                        <h1 onClick={() => this.props.mobileToggleNav()} >Profile</h1>
+                                        <h1 onClick={() => this.props.mobileToggleNav()} >Orders</h1>
                                     </Link>
                                     <Link to='/dashboard'>
                                         <h1 onClick={() => this.props.mobileToggleNav()} >Dashboard</h1>

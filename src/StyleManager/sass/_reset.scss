@@ -1,3 +1,23 @@
+$post-background: rgb(34,34,34);
+$text-light: #9f9f9f;
+
+@mixin flex-justify-align($justify, $align, $direction){
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+%oct-clip{
+	background: linear-gradient(165deg, white 0 52%, rgba(0,0,0,0) 54% 100%);
+	padding: .4em;
+	clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
+}
+
+%container-clip{
+	clip-path: polygon(5% 0, 95% 0, 100% 11%, 100% 89%, 95% 100%, 5% 100%, 0 89%, 0 11%);
+}
+
 
 html, body, div, span,
 h1, h2, h3, h4, h5, h6, p, a,
@@ -52,6 +72,10 @@ button{
 	font-weight: bold;
 	font-family: 'Roboto Slab', serif;
 	background: #505050;
+}
+
+button:hover{
+	cursor: pointer;
 }
 
 span{

@@ -11,7 +11,9 @@ class Home extends Component{
         this.state = {
             postsDisplay: [],
             offset: 0,
-            postsLoading: true
+            postsLoading: true,
+            carousel: [],
+            loadingCarousel: true
         }
     }
 
@@ -19,6 +21,9 @@ class Home extends Component{
         axios.get(`/post/read-5/${this.state.offset}`).then(res => {
             this.setState({postsDisplay: res.data, postsLoading: false})
         }).catch(err => console.log('error getting posts: ', err))
+        axios.get('/order/carousel').then(res => {
+            this.setState({carousel: res.data, loadingCarousel: false})
+        }).catch(err => console.log('error in carousel get: ', err))
     }
 
     render(){
@@ -27,7 +32,12 @@ class Home extends Component{
                 <div id='top-level-container' className='home-container'>
                     <h1 id='top-level-title'>Home</h1>
                     <span>Recently Completed Projects</span>
-                        <ProjectCarousel />
+                    {this.state.loadingCarousel
+                    ?
+                    <div></div>
+                    :
+                    <ProjectCarousel carousel={this.state.carousel} />
+                    }
                     {this.props.activeBid && <CreateBidForm /> }
                     <span>Recent Bids</span>
                     <div className='posts-display'>

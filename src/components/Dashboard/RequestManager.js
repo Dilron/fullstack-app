@@ -39,6 +39,14 @@ class RequestManager extends Component {
         this.props.pushToReview(revObj)
     }
 
+    handleDeleteRequest = (postId) => {
+        axios.delete(`/post/delete/${postId}`).then(res => {
+            axios.get(`/post/read/user-reqs/${this.props.userId}`).then(res => {
+                this.setState({requestsDisplay: res.data, loadingReqs: false})
+            }).catch(err => console.log('error refreshing reqs: ', err))
+        }).catch(err => console.log('error deleting req: ', err))
+    }
+
     render(){
         return(
             <div className='req-manager-container'>
@@ -55,7 +63,10 @@ class RequestManager extends Component {
                                             <h3><u>{ele.link_ref}</u></h3>
                                             <h3><i>{ele.message}</i></h3>
                                         </div>
-                                    <button onClick={() => this.handleShowBids(ele.post_id)}>Show Bids</button>
+                                        <section>
+                                            <button onClick={() => this.handleShowBids(ele.post_id)} >Show Bids</button>
+                                            <button onClick={() => this.handleDeleteRequest(ele.post_id)} >Delete Request</button>
+                                        </section>
                                     </div>
                                 </div>
                             </div>

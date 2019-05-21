@@ -47,5 +47,12 @@ module.exports = {
         db.readShippingById({id}).then(response => {
             res.status(200).send(response)
         }).catch(err => console.log('error in get shipping: ', err))
+    },
+    deleteRequest: (req, res) => {
+        const db = req.app.get('db')
+        const {postId} = req.params
+        db.deleteRequest({postId}).then(response => {
+            res.sendStatus(200)
+        }).catch(err => console.log('error in deleteRequest: ', err))
     }
 }

@@ -1,7 +1,7 @@
 
 
 .header-container {
-    color: #9f9f9f;
+    color: $text-light;
     background-image:linear-gradient(120deg, black 0% 59%, rgba(0, 0, 0, 0) 79% 100%),
     url("https://i.imgur.com/IOe8TWQ.png");
     background-position: right;
@@ -40,7 +40,7 @@
     // background-position: top;
     // background-attachment: fixed;
     background: rgba(0,0,0,0);
-    color: #9f9f9f;
+    color: $text-light;
     width: 22%;
     height: 87vh;
     display: flex;
@@ -63,7 +63,7 @@
             width: 65%;
         }
         a{
-            color: #9f9f9f
+            color: $text-light
         }
         a:hover{
             color: red;
