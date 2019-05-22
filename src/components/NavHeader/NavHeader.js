@@ -2,9 +2,7 @@ import React, {Component} from 'react'
 import Nav from './Nav'
 
 class NavHeader extends Component {
-    constructor(props){
-        super(props)
-    }
+    
 
     mobileToggleNav = () => {
         const nav = document.getElementsByClassName('nav-container')

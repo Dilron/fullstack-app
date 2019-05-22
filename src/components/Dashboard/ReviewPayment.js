@@ -27,7 +27,7 @@ class ReviewPayment extends Component {
                 {bid_id
                 ?
                     (<>
-                    <img src={img_ref} className='review-payment-image' />
+                    <img alt='review for payment' src={img_ref} className='review-payment-image' />
                     <div className='review-info-bounding'>
                         <div className='review-info-breakout'>
                                 <h1>Reviewing <b><i>{username}`s</i></b> bid <br/></h1>

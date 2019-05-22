@@ -18,7 +18,7 @@ class ProjectCarousel extends Component {
                     this.props.carousel.map((ele) => {
                         return(
                             <div className='carousel-slide' key={ele.order_id}>
-                                <img className='carousel-img' src={ele.ship_img} />
+                                <img className='carousel-img' src={ele.ship_img} alt='completed project' />
                                 <section className='carousel-text'>
                                     <h1><b><i>{ele.title}</i></b> <br/>
                                     printed by <b><i>{ele.username}</i></b> </h1>

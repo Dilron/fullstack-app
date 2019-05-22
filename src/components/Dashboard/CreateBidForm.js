@@ -34,7 +34,7 @@ class CreateBidForm extends Component {
                 const {user_id, post_id} = this.props.bid
                 const bidBody = {...this.state, user_id, post_id}
                 const res = await axios.post('/request/new-bid', bidBody)
-                if(res.data = 'ok'){
+                if(res.data === 'ok'){
                     alert('Successfully submited, the user will be notified of your bid')
                     this.props.pushToBid({})
                     this.props.deactivateBid()
@@ -52,7 +52,8 @@ class CreateBidForm extends Component {
                 <div className='bid-bounding'>
                     <div className='post-container'>
                         <img src={this.props.bid.img_ref}
-                        className='post-preview-image' />
+                        className='post-preview-image'
+                        alt='post preview' />
                         <div className='post-body-container'>
                             <div className='post-info-container'>
                                 <h1><b><i>{this.props.bid.title}</i></b>, from <b><i>{this.props.bid.username}</i></b></h1>

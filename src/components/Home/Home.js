@@ -47,7 +47,7 @@ class Home extends Component{
                     <ProjectCarousel carousel={this.state.carousel} />
                     }
                     {this.props.activeBid && <CreateBidForm /> }
-                    <span>Recent Project Request</span>
+                    <span>Recent Project Requests</span>
                     <div className='posts-display'>
                     <div className='page-buttons'>
                         {offset ? 

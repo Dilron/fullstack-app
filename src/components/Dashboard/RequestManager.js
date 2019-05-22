@@ -60,7 +60,7 @@ class RequestManager extends Component {
                         return (
                             <div className='post-container-oct' key={i}>
                                 <div className='post-container'  >
-                                    <img className='post-preview-image' src={ele.img_ref} />
+                                    <img alt='reqest preview' className='post-preview-image' src={ele.img_ref} />
                                     <div className='post-body-container'>
                                         <div className='post-info-container'>
                                             <h1><b><i>{ele.title}</i></b></h1>

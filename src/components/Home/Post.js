@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
-import {Redirect} from 'react-router'
 import {activateBid, pushToBid} from '../../redDucks/bidReducer'
 
 class Post extends Component{
@@ -22,7 +21,8 @@ class Post extends Component{
             <div className='post-container-oct'>
                 <div className='post-container'>
                     <img src={this.props.img_ref}
-                    className='post-preview-image'  />
+                    className='post-preview-image'
+                    alt='post preview'  />
                     <div className='post-body-container'>
                         <div className='post-info-container'>
                             <h1><b><i>{this.props.title}</i></b> <br/>from <b><i>{this.props.username}</i></b></h1>
